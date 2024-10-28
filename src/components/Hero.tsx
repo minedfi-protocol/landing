@@ -46,7 +46,7 @@ const Hero = () => {
             type="submit" 
             className="bg-[#1B3B36] text-white px-8 py-3 rounded-full hover:bg-[#2C524A] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
           >
-            Subscribe
+            Join the waitlist
           </button>
         </form>
       </div>
