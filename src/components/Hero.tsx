@@ -8,7 +8,7 @@ const Hero = () => {
         style={{
           backgroundImage: `url('/images/background.png')`,
           backgroundSize: 'contain',
-          backgroundPosition: 'right center',
+          backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
           opacity: 0.95
         }}
