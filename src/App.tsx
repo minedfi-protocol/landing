@@ -8,7 +8,7 @@ function App() {
     <main className="min-h-screen">
       <Navbar />
       <Analytics />
-	  <Hero />
+      <Hero />
     </main>
   );
 }
