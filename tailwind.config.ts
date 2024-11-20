@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        Golos: ['Golos', 'sans-serif']
+      },
       colors: {
         neutral: {
           10: '#FFFCF9',
