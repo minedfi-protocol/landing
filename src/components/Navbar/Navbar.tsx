@@ -12,7 +12,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className='box-border fixed left-0 top-0 z-50 flex h-20 w-full flex-col items-center justify-center bg-neutral-10 px-4 lg:px-[140px]'>
+    <nav className='box-border z-50 flex h-20 w-full flex-col items-center justify-center bg-neutral-10 px-4 lg:px-[140px]'>
       <div className='flex h-12 w-full max-w-[1160px] flex-row items-center justify-between gap-8 p-0'>
         <div className='flex h-6 w-[119px] flex-row items-start gap-1'>
           <div className='flex h-6 w-[119px] flex-row items-center gap-1'>

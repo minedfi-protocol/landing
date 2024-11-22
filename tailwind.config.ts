@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/sections/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
@@ -58,7 +59,13 @@ const config: Config = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'header-pattern': 'url("/assets/images/hero.png")',
+        'header-gradient': 'linear-gradient(90deg, #180F08 0%, #5D544D 100%);',
+        tvl: 'url("/assets/images/hero-images-labels/TVL.png")',
+        hashrate: 'url("/assets/images/hero-images-labels/Hashrate.png")',
+        energy: 'url("/assets/images/hero-images-labels/Energy.png")',
+        apy: 'url("/assets/images/hero-images-labels/APY.png")'
       }
     }
   },
