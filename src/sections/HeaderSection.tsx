@@ -30,7 +30,9 @@ export const HeaderSection = () => {
       <div className='absolute bottom-8 right-5 w-[298px] h-[146px] bg-energy_mobile md:bg-energy bg-cover bg-center' />
 
       <div className='w-full min-h-[686px] bg-header-pattern bg-cover bg-center bg-no-repeat rounded-lg flex flex-col items-center justify-center'>
-        <h1 className='text-mobile-h1 text-center md:text-desktop-h1'>Redefining Mining</h1>
+        <h1 className='text-mobile-h1 text-center md:text-desktop-h1 bg-gradient-to-r p-4 from-[#180F08] to-[#5D544D] bg-clip-text text-transparent'>
+          Redefining Mining
+        </h1>
         <h1 className='text-mobile-subtitle text-center md:text-desktop-subtitle mt-[24px] text-neutral-40'>
           Democratizing mining while fueling a sustainable future.
         </h1>
