@@ -18,16 +18,16 @@ export const HeaderSection = () => {
       </div> */}
 
       {/* Top Left Square */}
-      <div className='absolute -top-5 left-5 w-[298px] h-[146px] bg-apy bg-cover bg-center' />
+      <div className='absolute top-5 md:-top-5 left-5 w-[298px] h-[146px] bg-apy_mobile md:bg-apy bg-cover bg-center' />
 
       {/* Top Right Square */}
-      <div className='absolute -top-5 right-5 w-[298px] h-[146px] bg-tvl bg-cover bg-center' />
+      <div className='absolute top-5 md:-top-5 right-5 w-[298px] h-[146px] bg-tvl_mobile md:bg-tvl bg-cover bg-center' />
 
       {/* Bottom Left Square */}
-      <div className='absolute bottom-8 left-5 w-[298px] h-[146px] bg-hashrate bg-cover bg-center' />
+      <div className='absolute bottom-8 left-5 w-[298px] h-[146px] bg-hash_mobile md:bg-hashrate bg-cover bg-center' />
 
       {/* Bottom Right Square */}
-      <div className='absolute bottom-8 right-5 w-[298px] h-[146px] bg-energy bg-cover bg-center' />
+      <div className='absolute bottom-8 right-5 w-[298px] h-[146px] bg-energy_mobile md:bg-energy bg-cover bg-center' />
 
       <div className='w-full min-h-[686px] bg-header-pattern bg-cover bg-center bg-no-repeat rounded-lg flex flex-col items-center justify-center'>
         <h1 className='text-mobile-h1 text-center md:text-desktop-h1'>Redefining Mining</h1>

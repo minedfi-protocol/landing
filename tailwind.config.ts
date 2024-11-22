@@ -65,7 +65,11 @@ const config: Config = {
         tvl: 'url("/assets/images/hero-images-labels/TVL.png")',
         hashrate: 'url("/assets/images/hero-images-labels/Hashrate.png")',
         energy: 'url("/assets/images/hero-images-labels/Energy.png")',
-        apy: 'url("/assets/images/hero-images-labels/APY.png")'
+        apy: 'url("/assets/images/hero-images-labels/APY.png")',
+        tvl_mobile: 'url("/assets/images/hero-images-labels/TVL-Mobile.png")',
+        hash_mobile: 'url("/assets/images/hero-images-labels/Hashrate-Mobile.png")',
+        energy_mobile: 'url("/assets/images/hero-images-labels/Energy-Mobile.png")',
+        apy_mobile: 'url("/assets/images/hero-images-labels/APY-Mobile.png")'
       }
     }
   },
