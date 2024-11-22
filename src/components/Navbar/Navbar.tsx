@@ -55,7 +55,7 @@ export const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className='lg:hidden absolute top-20 left-0 w-full bg-neutral-10 border-t border-[#BFB8B0]'>
+        <div className='lg:hidden absolute z-50 top-20 left-0 w-full bg-neutral-10 border-t border-[#BFB8B0]'>
           <div className='flex flex-col p-4 gap-4'>
             <div className='flex flex-col gap-4'>
               {menuItems.map(item => (
