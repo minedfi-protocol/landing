@@ -16,14 +16,13 @@ export const TokenSection = () => {
           Explore Supported Assets
         </p>
       </div>
-      <div className='mt-[64px]'>
+      <div className='md:mt-[64px]'>
         <div className='block md:hidden'>
           <Image
             src='/assets/images/Token-Graphic-Mobile.png'
             alt='Info graphic about tokens'
             width={375}
             height={386}
-            priority
           />
         </div>
 
@@ -33,7 +32,6 @@ export const TokenSection = () => {
             alt='Info graphic about tokens'
             width={679}
             height={697}
-            priority
           />
         </div>
       </div>
