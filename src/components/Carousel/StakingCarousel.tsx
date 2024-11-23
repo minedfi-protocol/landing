@@ -8,7 +8,6 @@ export const StakingCarousel = () => {
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
   const autoPlayRef = useRef<NodeJS.Timeout>()
 
-  // Minimalna odległość swipe'a potrzebna do zmiany slajdu
   const minSwipeDistance = 50
 
   const slides = [
@@ -35,7 +34,6 @@ export const StakingCarousel = () => {
     setActiveSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1))
   }
 
-  // Resetuj autoplay
   const resetAutoPlay = () => {
     if (autoPlayRef.current) {
       clearInterval(autoPlayRef.current)
@@ -54,18 +52,15 @@ export const StakingCarousel = () => {
     }
   }, [])
 
-  // Obsługa dotyku - start
   const onTouchStart = (e: TouchEvent) => {
     setTouchEnd(null)
     setTouchStart(e.targetTouches[0].clientX)
   }
 
-  // Obsługa dotyku - ruch
   const onTouchMove = (e: TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX)
   }
 
-  // Obsługa dotyku - koniec
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return
 
