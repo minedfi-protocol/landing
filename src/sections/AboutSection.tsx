@@ -1,16 +1,11 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { CardItem } from '@/components/CardItem/CardItem'
-import ReactSimplyCarousel from 'react-simply-carousel'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
 import StakingCarousel from '@/components/Carousel/StakingCarousel'
 
 export const About = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const sectionRef = useRef(null)
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0)
 
   useEffect(() => {
     const options = {
