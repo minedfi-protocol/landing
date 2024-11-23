@@ -1,10 +1,16 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import { CardItem } from '@/components/CardItem/CardItem'
+import ReactSimplyCarousel from 'react-simply-carousel'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import StakingCarousel from '@/components/Carousel/StakingCarousel'
 
 export const About = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const sectionRef = useRef(null)
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0)
 
   useEffect(() => {
     const options = {
@@ -65,6 +71,9 @@ export const About = () => {
           className='w-full h-full object-cover'>
           <source src='/assets/about-animation.mp4' type='video/mp4' />
         </video>
+      </div>
+      <div className=''>
+        <StakingCarousel />
       </div>
       <div className='overflow-hidden w-full lg:max-w-[1160px] h-[950px] pt-[32px] lg:px-0 lg:pt-0 lg:h-[582px] bg-about-info-background bg-no-repeat bg-cover flex lg:flex-row flex-col-reverse rounded-[32px]'>
         <div className='h-[750px] w-full lg:w-[630px]'>
