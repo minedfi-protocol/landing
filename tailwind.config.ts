@@ -31,6 +31,7 @@ const config: Config = {
         'dark-blue': '#78A6E3',
         'light-pink': '#E1C7F3',
         'dark-pink': '#B07DE0',
+        'light-gray': '#867F77',
         yellow: '#F9EDD8'
       },
       fontSize: {
