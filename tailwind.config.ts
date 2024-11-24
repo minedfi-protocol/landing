@@ -73,7 +73,8 @@ const config: Config = {
         energy_mobile: 'url("/assets/images/hero-images-labels/Energy-Mobile.png")',
         apy_mobile: 'url("/assets/images/hero-images-labels/APY-Mobile.png")',
         'about-info-background': 'url("/assets/images/about-us-graphic1.png")',
-        'about-info-phone': 'url("/assets/images/about-phone.png")'
+        'about-info-phone': 'url("/assets/images/about-phone.png")',
+        rings: 'url("/assets/images/rings.png")'
       }
     }
   },
