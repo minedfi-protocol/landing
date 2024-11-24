@@ -10,8 +10,8 @@ export const PartnersSection = () => {
       <div
         className='absolute w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 bg-rings bg-cover bg-no-repeat'
         style={{
-          maskImage: 'radial-gradient(circle at center, black 40%, transparent 75%)',
-          WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 75%)'
+          maskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)'
         }}></div>
       <div className='mt-20 md:mt-48 z-50'>
         <>
