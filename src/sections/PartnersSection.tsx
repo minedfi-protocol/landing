@@ -28,43 +28,43 @@ export const PartnersSection = () => {
             <PartnersCardItem
               title='Auditors'
               logos={
-                <div className='flex flex-col gap-4 sm:gap-6 md:gap-8'>
-                  <div className='flex flex-row items-center justify-center gap-4 sm:gap-8 md:gap-16 lg:gap-[200px]'>
-                    <div className='w-[120px] sm:w-[130px] md:w-[140px] lg:w-[154px] relative h-[20px] sm:h-[23px] md:h-[25px] lg:h-[27px]'>
-                      <Image
-                        src='/assets/images/partners/audit-1.png'
-                        alt='Auditors'
-                        fill
-                        className='object-contain'
-                      />
-                    </div>
-                    <div className='w-[120px] sm:w-[130px] md:w-[140px] lg:w-[154px] relative h-[20px] sm:h-[23px] md:h-[25px] lg:h-[27px]'>
-                      <Image
-                        src='/assets/images/partners/audit-2.png'
-                        alt='Auditors'
-                        fill
-                        className='object-contain'
-                      />
-                    </div>
+                <div className='grid grid-cols-2 gap-4 w-full max-w-3xl mx-auto'>
+                  {/* Siatka 2x2 na wszystkich breakpointach */}
+                  <div className='w-full h-8 relative flex items-center justify-center'>
+                    <Image
+                      src='/assets/images/partners/audit-1.png'
+                      alt='Auditors'
+                      width={130}
+                      height={32}
+                      className='object-contain w-[120px] md:max-w-[130px]'
+                    />
                   </div>
-
-                  <div className='flex items-center justify-center gap-4 sm:gap-8 md:gap-16 lg:gap-[200px]'>
-                    <div className='w-[120px] sm:w-[130px] md:w-[140px] lg:w-[154px] relative h-[20px] sm:h-[23px] md:h-[25px] lg:h-[27px]'>
-                      <Image
-                        src='/assets/images/partners/audit-3.png'
-                        alt='Auditors'
-                        fill
-                        className='object-contain'
-                      />
-                    </div>
-                    <div className='w-[120px] sm:w-[130px] md:w-[140px] lg:w-[154px] relative h-[20px] sm:h-[23px] md:h-[25px] lg:h-[27px]'>
-                      <Image
-                        src='/assets/images/partners/audit-4.png'
-                        alt='Auditors'
-                        fill
-                        className='object-contain'
-                      />
-                    </div>
+                  <div className='w-full h-8 relative flex items-center justify-center'>
+                    <Image
+                      src='/assets/images/partners/audit-2.png'
+                      alt='Auditors'
+                      width={130}
+                      height={32}
+                      className='object-contain w-[120px] md:max-w-[130px]'
+                    />
+                  </div>
+                  <div className='w-full h-8 relative flex items-center justify-center'>
+                    <Image
+                      src='/assets/images/partners/audit-3.png'
+                      alt='Auditors'
+                      width={130}
+                      height={32}
+                      className='object-contain w-[120px] md:max-w-[130px]'
+                    />
+                  </div>
+                  <div className='w-full h-8 relative flex items-center justify-center'>
+                    <Image
+                      src='/assets/images/partners/audit-4.png'
+                      alt='Auditors'
+                      width={130}
+                      height={32}
+                      className='object-contain w-[120px] md:max-w-[130px]'
+                    />
                   </div>
                 </div>
               }
@@ -73,21 +73,23 @@ export const PartnersSection = () => {
             <PartnersCardItem
               title='Business partners'
               logos={
-                <div className='flex items-center justify-center gap-4 sm:gap-8 md:gap-16 lg:gap-[200px]'>
-                  <div className='w-[120px] sm:w-[130px] md:w-[140px] lg:w-[148px] relative h-[28px] sm:h-[32px] md:h-[35px] lg:h-[38px]'>
+                <div className='grid grid-cols-2 gap-4 w-full max-w-3xl mx-auto'>
+                  <div className='w-full h-8 relative flex items-center justify-center'>
                     <Image
                       src='/assets/images/partners/alph.png'
                       alt='Partners'
-                      fill
-                      className='object-contain'
+                      width={130}
+                      height={32}
+                      className='object-contain w-[120px] md:max-w-[130px]'
                     />
                   </div>
-                  <div className='w-[120px] sm:w-[130px] md:w-[140px] lg:w-[156px] relative h-[15px] sm:h-[17px] md:h-[18px] lg:h-[20px]'>
+                  <div className='w-full h-8 relative flex items-center justify-center'>
                     <Image
                       src='/assets/images/partners/hearst.png'
                       alt='Partners'
-                      fill
-                      className='object-contain'
+                      width={130}
+                      height={32}
+                      className='object-contain w-[120px] md:max-w-[130px]'
                     />
                   </div>
                 </div>
