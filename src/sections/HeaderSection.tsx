@@ -1,17 +1,40 @@
+'use client'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export const HeaderSection = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+
+    window.addEventListener('resize', checkMobile)
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   return (
     <section className='relative flex flex-col items-center gap-16 w-[calc(100%-40px)] bg-transparent mx-auto overflow-hidden rounded-3xl'>
       <div className='absolute -inset-1 z-0 '>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className='w-full h-full object-cover md:object-center bg-transparent'>
-          <source src='/assets/drop.mp4' type='video/mp4' />
-        </video>
+        <div className='absolute inset-0 z-0'>
+          <video
+            key={isMobile ? 'mobile' : 'desktop'}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className='w-full h-full object-cover md:object-center bg-transparent'>
+            <source
+              src={isMobile ? '/assets/drop-mobile.mp4' : '/assets/drop.mp4'}
+              type='video/mp4'
+            />
+          </video>
+        </div>
       </div>
       <div className='relative z-10 w-full'>
         <div className='absolute top-5 md:-top-5 -left-0 w-[200px] md:w-[298px] h-[100px] md:h-[146px] bg-apy_mobile md:bg-apy bg-cover bg-center' />
