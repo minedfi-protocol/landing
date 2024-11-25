@@ -5,13 +5,13 @@ import Image from 'next/image'
 export const HeaderSection = () => {
   return (
     <section className='relative flex flex-col items-center px-5 pb-5 gap-16 w-full bg-[#FFFCF9] overflow-hidden'>
-      <div className='absolute inset-0 w-full h-full bg-transparent'>
+      <div className='absolute inset-0 w-full h-full bg-[#FFFCF9]'>
         <video
           autoPlay
           muted
           loop
           playsInline
-          className='absolute top-0 left-0 w-full h-full object-cover md:object-center z-0'>
+          className='absolute top-1 left-0 w-full h-full object-cover md:object-center z-0 bg-[#FFFCF9]'>
           <source src='/assets/drop.mp4' type='video/mp4' />
         </video>
       </div>
