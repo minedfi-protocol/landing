@@ -50,6 +50,7 @@ const config: Config = {
         'mobile-h1': ['56px', '54px'],
         'mobile-h2': ['32px', '40px'],
         'mobile-h3': ['32px', '32px'],
+        'mobile-h4': ['18px', '22px'],
         'mobile-title-m': ['24px', '24px'],
         'mobile-title-s': ['16px', '28px'],
         'mobile-title-xs': ['14px', '16px'],
