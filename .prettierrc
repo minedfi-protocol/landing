@@ -1,4 +1,5 @@
 {
+  "plugins": ["prettier-plugin-tailwindcss"],
   "arrowParens": "avoid",
   "bracketSpacing": true,
   "quoteProps": "as-needed",
@@ -8,7 +9,6 @@
   "useTabs": false,
   "singleQuote": true,
   "jsxSingleQuote": true,
-  "spaceBeforeFunctionParent": true,
   "printWidth": 100,
   "bracketSameLine": true
 }
