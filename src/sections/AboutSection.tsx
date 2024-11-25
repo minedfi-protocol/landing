@@ -1,7 +1,8 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import StakingCarousel from '@/components/Carousel/StakingCarousel'
+import { Carousel } from '@/components/Carousel/Carousel'
+import { AboutCardItem } from '@/components/CardItem/AboutCardItem'
 
 export const About = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -68,7 +69,21 @@ export const About = () => {
         </video>
       </div>
       <div className=''>
-        <StakingCarousel />
+        <Carousel autoPlay showGradient showButtons={false} interval={3000}>
+          <AboutCardItem
+            number='1'
+            description='Stake your assets on your terms 
+with flexible vesting periods.'
+          />
+          <AboutCardItem
+            number='2'
+            description='Receive Liquid Mining Tokens (LMTs) in return (e.g., sALPH, sKAS, sBTC).'
+          />
+          <AboutCardItem
+            number='3'
+            description=' Watch your allocation grow and monitor your staking performance with full visibility and real-time insights.'
+          />
+        </Carousel>
       </div>
       <div className='overflow-hidden w-full lg:max-w-[1160px] h-[950px] pt-[32px] lg:px-0 lg:pt-0 lg:h-[582px] bg-about-info-background bg-no-repeat bg-cover flex lg:flex-row flex-col-reverse rounded-[32px]'>
         <div className='h-[750px] w-full lg:w-[630px]'>
