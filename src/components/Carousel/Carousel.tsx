@@ -21,7 +21,11 @@ export const Carousel = ({
   const [activeSlide, setActiveSlide] = useState(0)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeft, setScrollLeft] = useState(0)
   const autoPlayRef = useRef<NodeJS.Timeout>()
+  const sliderRef = useRef<HTMLDivElement>(null)
   const childrenArray = React.Children.toArray(children)
 
   const minSwipeDistance = 50
@@ -82,13 +86,52 @@ export const Carousel = ({
     }
   }
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!sliderRef.current) return
+    setIsDragging(true)
+    setStartX(e.pageX - sliderRef.current.offsetLeft)
+    setScrollLeft(sliderRef.current.scrollLeft)
+  }
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+  }
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !sliderRef.current) return
+    e.preventDefault()
+    const x = e.pageX - sliderRef.current.offsetLeft
+    const walk = x - startX
+    const slideWidth = sliderRef.current.clientWidth
+    const walkThreshold = slideWidth / 4
+
+    if (Math.abs(walk) >= walkThreshold) {
+      if (walk > 0) {
+        prevSlide()
+      } else {
+        nextSlide()
+      }
+      resetAutoPlay()
+      setIsDragging(false)
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setIsDragging(false)
+  }
+
   return (
     <div className='relative w-full overflow-hidden'>
       <div
-        className='relative w-full max-w-2xl mx-auto flex justify-center items-center flex-col'
+        ref={sliderRef}
+        className='relative w-full max-w-2xl mx-auto flex justify-center items-center flex-col cursor-grab active:cursor-grabbing'
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}>
+        onTouchEnd={onTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}>
         {showGradient && (
           <div className='absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10' />
         )}
@@ -96,7 +139,10 @@ export const Carousel = ({
         <div className='overflow-hidden'>
           <div
             className='flex transition-transform duration-1000 ease-in-out'
-            style={{ transform: `translateX(-${activeSlide * 100}%)` }}>
+            style={{
+              transform: `translateX(-${activeSlide * 100}%)`,
+              pointerEvents: isDragging ? 'none' : 'auto'
+            }}>
             {childrenArray.map((child, index) => (
               <div key={index} className='w-full flex-shrink-0 flex justify-center'>
                 {child}
@@ -111,7 +157,7 @@ export const Carousel = ({
                 prevSlide()
                 resetAutoPlay()
               }}
-              className='z-20 p-2 rounded-full w-[56px] h-[56px] bg-neutral-20 hover:bg-white transition-colors  flex justify-center items-center'>
+              className='z-20 p-2 rounded-full w-[56px] h-[56px] bg-neutral-20 hover:bg-white transition-colors flex justify-center items-center'>
               <Image
                 src='/assets/images/button-arrow-black.svg'
                 alt='left'
@@ -126,7 +172,7 @@ export const Carousel = ({
                 nextSlide()
                 resetAutoPlay()
               }}
-              className='z-20 p-2 w-[56px] h-[56px] rounded-full bg-neutral-60  hover:bg-white transition-colors flex justify-center items-center'>
+              className='z-20 p-2 w-[56px] h-[56px] rounded-full bg-neutral-60 hover:bg-white transition-colors flex justify-center items-center'>
               <Image src='/assets/images/button-arrow.svg' alt='left' width={24} height={24} />
             </button>
           </div>
