@@ -31,6 +31,7 @@ const config: Config = {
         'dark-blue': '#78A6E3',
         'light-pink': '#E1C7F3',
         'dark-pink': '#B07DE0',
+        'light-gray': '#867F77',
         yellow: '#F9EDD8'
       },
       fontSize: {
@@ -69,7 +70,9 @@ const config: Config = {
         tvl_mobile: 'url("/assets/images/hero-images-labels/TVL-Mobile.png")',
         hash_mobile: 'url("/assets/images/hero-images-labels/Hashrate-Mobile.png")',
         energy_mobile: 'url("/assets/images/hero-images-labels/Energy-Mobile.png")',
-        apy_mobile: 'url("/assets/images/hero-images-labels/APY-Mobile.png")'
+        apy_mobile: 'url("/assets/images/hero-images-labels/APY-Mobile.png")',
+        'about-info-background': 'url("/assets/images/about-us-graphic1.png")',
+        'about-info-phone': 'url("/assets/images/about-phone.png")'
       }
     }
   },
