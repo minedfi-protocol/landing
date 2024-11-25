@@ -6,9 +6,7 @@ import {
   useAnimationControls,
   useInView,
   useMotionValueEvent,
-  useScroll,
-  useSpring,
-  useTransform
+  useScroll
 } from 'motion/react'
 
 export const StakersSection = () => {
@@ -102,9 +100,8 @@ export const StakersSection = () => {
     } else {
       setAddMargin(false)
     }
-    console.log('value', value)
   })
-  console.log(addMargin)
+
   const secondTabRef = useRef(null)
   const thirdTabRef = useRef(null)
 
@@ -117,6 +114,9 @@ export const StakersSection = () => {
 
   const controls = useAnimationControls()
   useEffect(() => {
+    if (!isMobile) {
+      return
+    }
     if (!secondTabInView && !thirdTabInView) {
       controls.start('initial')
     } else if (secondTabInView && !thirdTabInView) {
@@ -124,14 +124,15 @@ export const StakersSection = () => {
     } else if (thirdTabInView) {
       controls.start('final')
     }
-  }, [secondTabInView, thirdTabInView])
+  }, [secondTabInView, thirdTabInView, isMobile])
 
   return (
     <section ref={scrollRef} className='relative'>
-      <div className='flex flex-col items-stretch bg-neutral-10 px-4 pt-12 md:px-[20px] lg:px-[140px] lg:pt-[200px]'>
+      <div className='flex flex-col items-stretch bg-neutral-10 px-4 pt-12 md:px-[20px] lg:px-[140px]'>
         <div
-          className={`sticky top-0 flex min-h-[112px] flex-col items-center justify-center bg-neutral-10 lg:w-1/2 lg:max-w-[600px] lg:items-start ${addMargin && 'mb-[450px]'}`}>
-          <div className='absolute top-[272px] z-10 h-4 w-full bg-gradient-to-b from-neutral-10 to-transparent' />
+          className={`sticky top-0 flex min-h-[112px] flex-col items-center justify-center bg-neutral-10 lg:-top-[120px] lg:w-1/2 lg:max-w-[600px] lg:items-start lg:pt-[200px] ${addMargin && isMobile && 'mb-[450px]'}`}>
+          <div className='absolute top-[272px] z-10 h-4 w-full bg-gradient-to-b from-neutral-10 to-transparent lg:top-[161px] lg:h-6' />
+
           <h2 className='mt-[8px] text-center text-mobile-h2 text-neutral-60 lg:w-[800px] lg:text-left lg:text-desktop-h2'>
             Mining made liquid
           </h2>
@@ -142,8 +143,8 @@ export const StakersSection = () => {
         </div>
 
         <div className='flex h-min w-full flex-col-reverse items-stretch lg:flex-row'>
-          <div className='max-w-[600px] lg:w-1/2'>
-            <div className='mt-16 flex flex-col gap-6'>
+          <div className='max-w-[600px] lg:mb-44 lg:w-1/2'>
+            <div className='mt-12 flex flex-col gap-6 lg:mt-4'>
               {stakers.map(staker => {
                 const ref = () => {
                   if (staker.title === stakers[1].title) {
@@ -180,9 +181,9 @@ export const StakersSection = () => {
 
           <motion.div
             ref={imagesRef}
-            className={`sticky top-[112px] flex max-h-[160px] overflow-hidden bg-neutral-10 ${addMargin && 'mb-[290px]'} `}>
+            className={`sticky top-[112px] flex max-h-[160px] flex-1 overflow-hidden bg-neutral-20 lg:top-[200px] lg:max-h-[550px] lg:overflow-visible ${addMargin && isMobile && 'mb-[290px]'} `}>
             <motion.div
-              className='flex flex-1 flex-col items-center justify-between gap-[100px]'
+              className='flex flex-1 flex-col items-center justify-between gap-[100px] lg:gap-[300px]'
               variants={{
                 initial: { y: 0 },
                 middle: { y: -260 },
@@ -198,7 +199,7 @@ export const StakersSection = () => {
                 <motion.img
                   src='/assets/images/stakers/Liquid.svg'
                   alt='Liquid'
-                  className='m-auto w-[120px] lg:w-[370px]'
+                  className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
                     scale: 1.5,
                     transition: { duration: 0.7 }
@@ -209,7 +210,7 @@ export const StakersSection = () => {
                 <motion.img
                   src='/assets/images/stakers/DAO.svg'
                   alt='DAO'
-                  className='m-auto w-[120px] lg:w-[370px]'
+                  className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
                     scale: 1.7,
                     transition: { duration: 0.7 }
@@ -220,7 +221,7 @@ export const StakersSection = () => {
                 <motion.img
                   src='/assets/images/stakers/Operations.svg'
                   alt='Operations'
-                  className='m-auto w-[120px] lg:w-[370px]'
+                  className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
                     scale: 1.7,
                     transition: { duration: 0.7 }
@@ -231,15 +232,22 @@ export const StakersSection = () => {
           </motion.div>
         </div>
       </div>
-      <div className='hidden bg-neutral-10 px-[140px] pt-12 lg:block'>
-        <button className='flex h-12 w-[138px] flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3'>
-          <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
-            Join waitlist
-          </span>
-        </button>
-      </div>
+      {!isMobile && (
+        <>
+          <div className='sticky bottom-[138px] h-24 w-full bg-gradient-to-t from-neutral-10 to-transparent' />
+          <div className='sticky bottom-0 bg-neutral-10 px-[140px] pb-[60px] pt-[30px]'>
+            <button className='z-20 flex h-12 w-[138px] flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3'>
+              <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
+                Join waitlist
+              </span>
+            </button>
+          </div>
+        </>
+      )}
 
-      <div className='sticky bottom-0 h-24 w-full bg-gradient-to-t from-neutral-10 to-transparent' />
+      {isMobile && (
+        <div className='sticky bottom-0 h-24 w-full bg-gradient-to-t from-neutral-10 to-transparent' />
+      )}
     </section>
   )
 }
