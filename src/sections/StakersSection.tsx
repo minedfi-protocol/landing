@@ -12,6 +12,19 @@ import {
 } from 'motion/react'
 
 export const StakersSection = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 1024px)')
+    const handleResize = () => setIsMobile(mediaQuery.matches)
+
+    handleResize()
+
+    mediaQuery.addEventListener('change', handleResize)
+
+    return () => mediaQuery.removeEventListener('change', handleResize)
+  }, [])
+
   const stakers = [
     {
       title: 'Liquid Mining',
@@ -82,10 +95,6 @@ export const StakersSection = () => {
     target: scrollRef
   })
 
-  useEffect(() => {
-    console.log('scroll, ', scroll)
-  }, [scroll])
-
   const [addMargin, setAddMargin] = useState(false)
   useMotionValueEvent(scrollYProgress, 'change', value => {
     if (value > 0.8) {
@@ -100,7 +109,7 @@ export const StakersSection = () => {
   const thirdTabRef = useRef(null)
 
   const secondTabInView = useInView(secondTabRef, {
-    amount: 0.7
+    amount: 0.6
   })
   const thirdTabInView = useInView(thirdTabRef, {
     amount: 0.7
@@ -112,7 +121,7 @@ export const StakersSection = () => {
       controls.start('initial')
     } else if (secondTabInView && !thirdTabInView) {
       controls.start('middle')
-    } else if (secondTabInView && thirdTabInView) {
+    } else if (thirdTabInView) {
       controls.start('final')
     }
   }, [secondTabInView, thirdTabInView])
@@ -181,7 +190,7 @@ export const StakersSection = () => {
               }}
               animate={controls}
               transition={{
-                duration: 0.5,
+                duration: 0.8,
                 ease: 'easeInOut'
               }}
               initial='initial'>
