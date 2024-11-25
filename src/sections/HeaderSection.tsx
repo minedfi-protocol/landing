@@ -1,21 +1,18 @@
-import Navbar from '@/components/Navbar/Navbar'
-import React from 'react'
 import Image from 'next/image'
 
 export const HeaderSection = () => {
   return (
-    <section className='relative flex flex-col items-center px-5 pb-5 gap-16 w-full bg-[#FFFCF9] overflow-hidden'>
-      <div className='absolute inset-0 w-full h-full bg-[#FFFCF9]'>
+    <section className='relative flex flex-col items-center gap-16 w-[calc(100%-40px)] bg-transparent mx-auto overflow-hidden rounded-3xl'>
+      <div className='absolute -inset-1 z-0 '>
         <video
           autoPlay
           muted
           loop
           playsInline
-          className='absolute top-1 left-0 w-full h-full object-cover md:object-center z-0 bg-[#FFFCF9]'>
+          className='w-full h-full object-cover md:object-center bg-transparent'>
           <source src='/assets/drop.mp4' type='video/mp4' />
         </video>
       </div>
-
       <div className='relative z-10 w-full'>
         <div className='absolute top-5 md:-top-5 -left-5 w-[200px] md:w-[298px] h-[100px] md:h-[146px] bg-apy_mobile md:bg-apy bg-cover bg-center' />
         <div className='absolute top-5 md:-top-5 -right-5 w-[200px] md:w-[298px] h-[100px] md:h-[146px] bg-tvl_mobile md:bg-tvl bg-cover bg-center' />
