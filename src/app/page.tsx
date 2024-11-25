@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar/Navbar'
 import { About } from '@/sections/AboutSection'
+import { Footer } from '@/sections/Footer'
 import { HeaderSection } from '@/sections/HeaderSection'
 import { PartnersSection } from '@/sections/PartnersSection'
 import { TokenSection } from '@/sections/TokenSection'
@@ -11,6 +12,7 @@ export default function Home() {
       <About />
       <TokenSection />
       <PartnersSection />
+      <Footer />
     </div>
   )
 }

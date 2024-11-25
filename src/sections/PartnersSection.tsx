@@ -21,7 +21,7 @@ export const PartnersSection = () => {
           <h2 className='text-mobile-h2 lg:text-desktop-h2 text-neutral-60 text-center lg:w-[800px] mt-[12px]'>
             Partners
           </h2>
-          <p className='text-neutral-40 text-mobile-subtitle lg:text-desktop-subtitle lg:w-[800px] text-center mt-[8px]'></p>
+          <p className='text-neutral-40 text-mobile-subtitle lg:text-desktop-subtitle lg:w-[800px] text-center mt-2'></p>
         </>
         <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <Carousel autoPlay showGradient={false} interval={3000}>
