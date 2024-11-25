@@ -1,27 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
 body {
-  font-family: var(--font-golos), Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-  -webkit-text-size-adjust: 100%;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
 }

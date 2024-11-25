@@ -1,7 +1,13 @@
-import { Golos_Text } from 'next/font/google'
+import { Inter, Roboto_Mono } from 'next/font/google'
 
-export const golos = Golos_Text({
+export const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-golos'
+  variable: '--font-inter'
+})
+
+export const roboto = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono'
 })
