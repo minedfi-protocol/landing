@@ -11,7 +11,7 @@ export const CardItem: React.FC<CardItemProps> = ({ description, number }) => {
       <div className='text-neutral-40 text-center text-desktop-body-s border border-neutral-60 w-[40px] h-[40px] py-[8px] px-[5px] rounded-full border-solid'>
         {number}
       </div>
-      <div className='mt-[8px] text-neutral-40 text-desktop-body-s text-center'>{description}</div>
+      <div className='mt-2 text-neutral-40 text-desktop-body-s text-center'>{description}</div>
     </div>
   )
 }

@@ -48,7 +48,7 @@ export const About = () => {
         <h2 className='text-mobile-h2 lg:text-desktop-h2 text-neutral-60 text-center lg:w-[800px] mt-[12px]'>
           Redefining mining through liquid staking
         </h2>
-        <p className='text-neutral-40 text-mobile-subtitle lg:text-desktop-subtitle lg:w-[800px] text-center mt-[8px] lg:mt-20'>
+        <p className='text-neutral-40 text-mobile-subtitle lg:text-desktop-subtitle lg:w-[800px] text-center mt-2 lg:mt-20'>
           Optimize your PoW investments with mined.fi's multicoin staking. Stake $BTC, $ALPH, $DOGE,
           or $KAS to earn mining rewards and boost your DeFi potential.
         </p>

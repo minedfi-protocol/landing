@@ -12,7 +12,7 @@ export const TokenSection = () => {
         <h2 className='text-mobile-h2 lg:text-desktop-h2 text-neutral-60 text-center lg:w-[800px] mt-[12px]'>
           Stake native tokens, receive LMTs and mining rewards
         </h2>
-        <p className='text-neutral-40 text-mobile-subtitle lg:text-desktop-subtitle lg:w-[800px] text-center mt-[8px]'>
+        <p className='text-neutral-40 text-mobile-subtitle lg:text-desktop-subtitle lg:w-[800px] text-center mt-2'>
           Explore Supported Assets
         </p>
       </div>
