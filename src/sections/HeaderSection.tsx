@@ -12,15 +12,15 @@ export const HeaderSection = () => {
           loop
           playsInline
           className='absolute top-0 left-0 w-full h-full object-cover md:object-center z-0'>
-          <source src='/assets/glossy-water-drop.webm' type='video/mp4' />
+          <source src='/assets/drop.mp4' type='video/mp4' />
         </video>
       </div>
 
       <div className='relative z-10 w-full'>
         <div className='absolute top-5 md:-top-5 -left-5 w-[200px] md:w-[298px] h-[100px] md:h-[146px] bg-apy_mobile md:bg-apy bg-cover bg-center' />
         <div className='absolute top-5 md:-top-5 -right-5 w-[200px] md:w-[298px] h-[100px] md:h-[146px] bg-tvl_mobile md:bg-tvl bg-cover bg-center' />
-        <div className='absolute bottom-8 -left-5 w-[200px] md:w-[298px] h-[100px] md:h-[146px] bg-hash_mobile md:bg-hashrate bg-cover bg-center' />
-        <div className='absolute bottom-8 -right-5 w-[200px] md:w-[298px] h-[100px] md:h-[146px] bg-energy_mobile md:bg-energy bg-cover bg-center' />
+        <div className='absolute bottom-8 -left-5 w-[200px] md:w-[340px] h-[100px] md:h-[146px] bg-hash_mobile md:bg-hashrate bg-cover bg-center' />
+        <div className='absolute bottom-8 -right-5 w-[200px] md:w-[340px] h-[100px] md:h-[146px] bg-energy_mobile md:bg-energy bg-cover bg-center' />
 
         <div className='w-full min-h-[686px] bg-transparent flex flex-col items-center justify-center'>
           <h1 className='text-mobile-h1 text-center md:text-desktop-h1 bg-gradient-to-r p-4 from-[#180F08] to-[#5D544D] bg-clip-text text-transparent'>
