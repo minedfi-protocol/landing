@@ -39,6 +39,7 @@ const config: Config = {
         'desktop-h1': ['88px', '90px'],
         'desktop-h2': ['56px', '72px'],
         'desktop-h3': ['48px', '48px'],
+        'desktop-h5': ['16px', '24px'],
         'desktop-title-m': ['24px', '30px'],
         'desktop-title-s': ['20px', '24px'],
         'desktop-subtitle': ['20px', '20px'],
