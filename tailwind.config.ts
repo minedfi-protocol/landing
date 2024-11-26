@@ -66,17 +66,10 @@ const config: Config = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'header-pattern': 'url("/assets/images/hero.png")',
         'header-gradient': 'linear-gradient(90deg, #180F08 0%, #5D544D 100%);',
-        tvl: 'url("/assets/images/hero-images-labels/TVL.png")',
-        hashrate: 'url("/assets/images/hero-images-labels/Hashrate.png")',
-        energy: 'url("/assets/images/hero-images-labels/Energy.png")',
-        apy: 'url("/assets/images/hero-images-labels/APY.png")',
-        tvl_mobile: 'url("/assets/images/hero-images-labels/TVL-Mobile.png")',
-        hash_mobile: 'url("/assets/images/hero-images-labels/Hashrate-Mobile.png")',
-        energy_mobile: 'url("/assets/images/hero-images-labels/Energy-Mobile.png")',
-        apy_mobile: 'url("/assets/images/hero-images-labels/APY-Mobile.png")',
         'about-info-background': 'url("/assets/images/about-us-graphic1.png")',
         'about-info-phone': 'url("/assets/images/about-phone.png")',
-        rings: 'url("/assets/images/rings.png")'
+        rings: 'url("/assets/images/rings.png")',
+        'cross-section-blur': 'url("/assets/images/cross-section-blur.png")'
       }
     }
   },
