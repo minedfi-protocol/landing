@@ -101,6 +101,7 @@ export const StakersSection = () => {
   })
   const [desktopAnimate, setDesktopAnimate] = useState(Animate.Initial)
   const [addMargin, setAddMargin] = useState(false)
+  const [addBottomMargin, setAddBottomMargin] = useState(false)
 
   const firstTabRef = useRef(null)
   const secondTabRef = useRef(null)
@@ -129,6 +130,12 @@ export const StakersSection = () => {
       setAddMargin(true)
     } else {
       setAddMargin(false)
+    }
+    console.log(value)
+    if (value < 0.2) {
+      setAddBottomMargin(true)
+    } else {
+      setAddBottomMargin(false)
     }
 
     if (!isMobile) {
@@ -167,8 +174,8 @@ export const StakersSection = () => {
           </div>
         )}
         <div
-          className={`sticky top-0 flex min-h-[112px] flex-col items-center justify-center bg-neutral-10 lg:top-[70px] lg:w-1/2 lg:max-w-[600px] lg:items-start lg:pt-[0px] ${addMargin ? (isMobile ? 'mb-[450px]' : 'mb-[450px]') : ''}`}>
-          <div className='absolute top-[272px] z-10 h-4 w-full bg-gradient-to-b from-neutral-10 to-transparent lg:top-[161px] lg:h-6' />
+          className={`sticky top-0 flex min-h-[112px] flex-col items-center justify-center bg-neutral-10 lg:top-[70px] lg:w-1/2 lg:max-w-[600px] lg:items-start lg:pt-[0px] ${addMargin ? (isMobile ? 'mb-[450px]' : 'mb-[420px]') : ''}`}>
+          <div className='absolute top-[272px] z-10 h-8 w-full bg-gradient-to-b from-neutral-10 to-transparent lg:top-[197px] lg:h-8' />
 
           <h2 className='mt-[8px] text-center text-mobile-h2 text-neutral-60 lg:w-[800px] lg:text-left lg:text-desktop-h2'>
             Mining made liquid
@@ -180,8 +187,8 @@ export const StakersSection = () => {
         </div>
 
         <div className='flex h-min w-full flex-col-reverse items-stretch lg:flex-row'>
-          <div ref={imagesRef} className='max-w-[600px] lg:mb-44 lg:w-1/2'>
-            <div className='mt-12 flex flex-col gap-16 lg:mt-4 lg:gap-32'>
+          <div ref={imagesRef} className='max-w-[600px] lg:mb-8 lg:w-1/2'>
+            <div className='mt-12 flex flex-col gap-16 lg:mt-8 lg:gap-32'>
               {stakers.map(staker => {
                 const ref = () => {
                   if (staker.title === stakers[0].title) {
@@ -219,7 +226,7 @@ export const StakersSection = () => {
           </div>
 
           <div
-            className={`sticky top-[112px] flex max-h-[160px] flex-1 overflow-hidden bg-neutral-10 lg:top-[200px] lg:ml-20 lg:max-h-[550px] lg:overflow-visible ${addMargin && isMobile && 'mb-[290px]'} `}>
+            className={`sticky top-[112px] flex max-h-[160px] flex-1 overflow-hidden bg-neutral-10 lg:top-[280px] lg:ml-20 lg:max-h-[400px] lg:overflow-visible ${addMargin && isMobile && 'mb-[290px]'} `}>
             <motion.div
               className='flex flex-1 flex-col items-center justify-between gap-[100px] lg:gap-[100px]'
               variants={{
@@ -240,7 +247,7 @@ export const StakersSection = () => {
                   className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
                     scale: isMobile ? 1.5 : desktopAnimate === Animate.Initial ? 2.3 : 1,
-                    transition:  { duration: 0.7 }
+                    transition: { duration: 0.7 }
                   }}
                   animate={{
                     opacity:
@@ -282,8 +289,11 @@ export const StakersSection = () => {
       </div>
       {!isMobile && (
         <>
-          <div className='sticky bottom-[138px] h-24 w-full bg-gradient-to-t from-neutral-10 to-transparent' />
-          <div className='sticky bottom-0 bg-neutral-10 px-[140px] pb-[60px] pt-[30px]'>
+          <div
+            className={`sticky bottom-[138px] h-24 w-full bg-gradient-to-t from-neutral-10 to-transparent ${addBottomMargin && 'mt-[704px]'}`}
+          />
+          <div
+            className={`sticky bottom-0 bg-neutral-10 px-[140px] pb-[60px] pt-[30px] ${addBottomMargin && 'mt-[800px]'}`}>
             <button className='z-20 flex h-12 w-[138px] flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3'>
               <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
                 Join waitlist
