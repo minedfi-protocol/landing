@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar/Navbar'
 import { About } from '@/sections/AboutSection'
+import { FaqSection } from '@/sections/FaqSection'
 import { Footer } from '@/sections/Footer'
 import { HeaderSection } from '@/sections/HeaderSection'
 import { PartnersSection } from '@/sections/PartnersSection'
@@ -13,6 +14,7 @@ export default function Home() {
       <TokenSection />
       <StakersSection />
       <PartnersSection />
+      <FaqSection />
       <Footer />
     </div>
   )

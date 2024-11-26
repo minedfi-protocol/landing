@@ -14,13 +14,12 @@ export const HeaderSection = () => {
 
     window.addEventListener('resize', checkMobile)
 
-    // Cleanup
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   return (
-    <section className='relative flex flex-col items-center gap-16 w-[calc(100%-40px)] bg-transparent mx-auto overflow-hidden rounded-3xl'>
-      <div className='absolute -inset-1 z-0 '>
+    <section className='relative mx-auto flex w-[calc(100%-40px)] flex-col items-center gap-16 overflow-hidden rounded-3xl bg-transparent'>
+      <div className='absolute -inset-1 z-0'>
         <div className='absolute inset-0 z-0'>
           <video
             key={isMobile ? 'mobile' : 'desktop'}
@@ -28,7 +27,7 @@ export const HeaderSection = () => {
             muted
             loop
             playsInline
-            className='w-full h-full object-cover md:object-center bg-transparent'>
+            className='h-full w-full bg-transparent object-cover md:object-center'>
             <source
               src={isMobile ? '/assets/drop-mobile.mp4' : '/assets/drop.mp4'}
               type='video/mp4'
@@ -37,19 +36,19 @@ export const HeaderSection = () => {
         </div>
       </div>
       <div className='relative z-10 w-full'>
-        <div className='absolute top-5 md:-top-5 -left-0 w-[200px] md:w-[298px] h-[100px] md:h-[146px] bg-apy_mobile md:bg-apy bg-cover bg-center' />
-        <div className='absolute top-5 md:-top-5 -right-0 w-[200px] md:w-[298px] h-[100px] md:h-[146px] bg-tvl_mobile md:bg-tvl bg-cover bg-center' />
-        <div className='absolute bottom-8 -left-0 w-[200px] md:w-[340px] h-[100px] md:h-[146px] bg-hash_mobile md:bg-hashrate bg-cover bg-center' />
-        <div className='absolute bottom-8 -right-0 w-[200px] md:w-[340px] h-[100px] md:h-[146px] bg-energy_mobile md:bg-energy bg-cover bg-center' />
+        <div className='absolute -left-0 top-5 h-[100px] w-[200px] bg-apy_mobile bg-cover bg-center md:-top-5 md:h-[146px] md:w-[298px] md:bg-apy' />
+        <div className='absolute -right-0 top-5 h-[100px] w-[200px] bg-tvl_mobile bg-cover bg-center md:-top-5 md:h-[146px] md:w-[298px] md:bg-tvl' />
+        <div className='absolute -left-0 bottom-8 h-[100px] w-[200px] bg-hash_mobile bg-cover bg-center md:h-[146px] md:w-[340px] md:bg-hashrate' />
+        <div className='absolute -right-0 bottom-8 h-[100px] w-[200px] bg-energy_mobile bg-cover bg-center md:h-[146px] md:w-[340px] md:bg-energy' />
 
-        <div className='w-full min-h-[686px] bg-transparent flex flex-col items-center justify-center'>
-          <h1 className='text-mobile-h1 text-center md:text-desktop-h1 bg-gradient-to-r p-4 from-[#180F08] to-[#5D544D] bg-clip-text text-transparent'>
+        <div className='flex min-h-[686px] w-full flex-col items-center justify-center bg-transparent'>
+          <h1 className='bg-gradient-to-r from-[#180F08] to-[#5D544D] bg-clip-text p-4 text-center text-mobile-h1 text-transparent md:text-desktop-h1'>
             Redefining Mining
           </h1>
-          <h1 className='text-mobile-subtitle text-center md:text-desktop-subtitle mt-[24px] text-neutral-40'>
+          <h1 className='mt-[24px] text-center text-mobile-subtitle text-neutral-40 md:text-desktop-subtitle'>
             Democratizing mining while fueling a sustainable future.
           </h1>
-          <button className='bg-neutral-80 rounded-[80px] px-[20px] py-[18px] text-desktop-label text-neutral-10 mt-[56px] md:mt-[46px] flex justify-center items-center'>
+          <button className='mt-[56px] flex items-center justify-center rounded-[80px] bg-neutral-80 px-[20px] py-[18px] text-desktop-label text-neutral-10 md:mt-[46px]'>
             Join waitlist
             <Image
               src={'/assets/images/button-arrow.svg'}

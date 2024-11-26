@@ -8,7 +8,6 @@ import {
   useMotionValueEvent,
   useScroll
 } from 'motion/react'
-import { init } from 'next/dist/compiled/webpack/webpack'
 
 export const StakersSection = () => {
   const [isMobile, setIsMobile] = useState(false)
