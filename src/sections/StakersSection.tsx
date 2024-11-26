@@ -8,6 +8,7 @@ import {
   useMotionValueEvent,
   useScroll
 } from 'motion/react'
+import { init } from 'next/dist/compiled/webpack/webpack'
 
 export const StakersSection = () => {
   const [isMobile, setIsMobile] = useState(false)
@@ -22,6 +23,12 @@ export const StakersSection = () => {
 
     return () => mediaQuery.removeEventListener('change', handleResize)
   }, [])
+
+  const enum Animate {
+    Initial = 'initial',
+    Middle = 'middle',
+    Final = 'final'
+  }
 
   const stakers = [
     {
@@ -92,45 +99,75 @@ export const StakersSection = () => {
   const { scrollYProgress } = useScroll({
     target: scrollRef
   })
-
+  const [desktopAnimate, setDesktopAnimate] = useState(Animate.Initial)
   const [addMargin, setAddMargin] = useState(false)
-  useMotionValueEvent(scrollYProgress, 'change', value => {
-    if (value > 0.8) {
-      setAddMargin(true)
-    } else {
-      setAddMargin(false)
-    }
-  })
 
+  const firstTabRef = useRef(null)
   const secondTabRef = useRef(null)
   const thirdTabRef = useRef(null)
 
+  const secondTabInViewDesktop = useInView(secondTabRef, {
+    amount: 0.7,
+    margin: '1000px 0px -300px 0px'
+  })
+  const thirdTabInViewDesktop = useInView(thirdTabRef, {
+    amount: 0.7,
+    margin: '1000px 0px -300px 0px'
+  })
+
   const secondTabInView = useInView(secondTabRef, {
-    amount: 0.6
+    amount: 0.7
   })
   const thirdTabInView = useInView(thirdTabRef, {
     amount: 0.7
   })
 
   const controls = useAnimationControls()
-  useEffect(() => {
+
+  useMotionValueEvent(scrollYProgress, 'change', value => {
+    if (value > 0.8) {
+      setAddMargin(true)
+    } else {
+      setAddMargin(false)
+    }
+
     if (!isMobile) {
-      return
+      if (!secondTabInViewDesktop && !thirdTabInViewDesktop && value < 0.8) {
+        controls.start(Animate.Initial)
+        setDesktopAnimate(Animate.Initial)
+      } else if (thirdTabInViewDesktop || value > 0.9) {
+        controls.start(Animate.Final)
+        setDesktopAnimate(Animate.Final)
+      } else if (secondTabInViewDesktop && !thirdTabInViewDesktop) {
+        controls.start(Animate.Middle)
+        setDesktopAnimate(Animate.Middle)
+      }
+    } else {
+      if (!secondTabInView && !thirdTabInView && value < 0.8) {
+        controls.start(Animate.Initial)
+        setDesktopAnimate(Animate.Initial)
+      } else if (thirdTabInView || value > 0.99) {
+        controls.start(Animate.Final)
+        setDesktopAnimate(Animate.Final)
+      } else if (secondTabInView && !thirdTabInView) {
+        controls.start(Animate.Middle)
+        setDesktopAnimate(Animate.Middle)
+      }
     }
-    if (!secondTabInView && !thirdTabInView) {
-      controls.start('initial')
-    } else if (secondTabInView && !thirdTabInView) {
-      controls.start('middle')
-    } else if (thirdTabInView) {
-      controls.start('final')
-    }
-  }, [secondTabInView, thirdTabInView, isMobile])
+  })
 
   return (
     <section ref={scrollRef} className='relative'>
       <div className='flex flex-col items-stretch bg-neutral-10 px-4 pt-12 md:px-[20px] lg:px-[140px]'>
+        {!isMobile && <div className='z-10 h-[150px] w-full bg-neutral-10' />}
+        {!isMobile && (
+          <div className={`sticky top-0 z-10 flex ${addMargin && 'mb-[610px]'}`}>
+            <div className='h-[80px] w-full bg-neutral-10' />
+            <div className='z-10 h-4 w-full bg-gradient-to-b from-neutral-10 to-transparent lg:top-[161px] lg:h-20' />
+          </div>
+        )}
         <div
-          className={`sticky top-0 flex min-h-[112px] flex-col items-center justify-center bg-neutral-10 lg:-top-[120px] lg:w-1/2 lg:max-w-[600px] lg:items-start lg:pt-[200px] ${addMargin && isMobile && 'mb-[450px]'}`}>
+          className={`sticky top-0 flex min-h-[112px] flex-col items-center justify-center bg-neutral-10 lg:top-[70px] lg:w-1/2 lg:max-w-[600px] lg:items-start lg:pt-[0px] ${addMargin ? (isMobile ? 'mb-[450px]' : 'mb-[450px]') : ''}`}>
           <div className='absolute top-[272px] z-10 h-4 w-full bg-gradient-to-b from-neutral-10 to-transparent lg:top-[161px] lg:h-6' />
 
           <h2 className='mt-[8px] text-center text-mobile-h2 text-neutral-60 lg:w-[800px] lg:text-left lg:text-desktop-h2'>
@@ -143,11 +180,13 @@ export const StakersSection = () => {
         </div>
 
         <div className='flex h-min w-full flex-col-reverse items-stretch lg:flex-row'>
-          <div className='max-w-[600px] lg:mb-44 lg:w-1/2'>
-            <div className='mt-12 flex flex-col gap-6 lg:mt-4'>
+          <div ref={imagesRef} className='max-w-[600px] lg:mb-44 lg:w-1/2'>
+            <div className='mt-12 flex flex-col gap-16 lg:mt-4 lg:gap-32'>
               {stakers.map(staker => {
                 const ref = () => {
-                  if (staker.title === stakers[1].title) {
+                  if (staker.title === stakers[0].title) {
+                    return firstTabRef
+                  } else if (staker.title === stakers[1].title) {
                     return secondTabRef
                   } else if (staker.title === stakers[2].title) {
                     return thirdTabRef
@@ -179,57 +218,66 @@ export const StakersSection = () => {
             </div>
           </div>
 
-          <motion.div
-            ref={imagesRef}
-            className={`sticky top-[112px] flex max-h-[160px] flex-1 overflow-hidden bg-neutral-20 lg:top-[200px] lg:max-h-[550px] lg:overflow-visible ${addMargin && isMobile && 'mb-[290px]'} `}>
+          <div
+            className={`sticky top-[112px] flex max-h-[160px] flex-1 overflow-hidden bg-neutral-10 lg:top-[200px] lg:ml-20 lg:max-h-[550px] lg:overflow-visible ${addMargin && isMobile && 'mb-[290px]'} `}>
             <motion.div
-              className='flex flex-1 flex-col items-center justify-between gap-[100px] lg:gap-[300px]'
+              className='flex flex-1 flex-col items-center justify-between gap-[100px] lg:gap-[100px]'
               variants={{
-                initial: { y: 0 },
-                middle: { y: -260 },
-                final: { y: -520 }
+                [Animate.Initial]: { y: 0 },
+                [Animate.Middle]: { y: isMobile ? -260 : -400 },
+                [Animate.Final]: { y: isMobile ? -520 : -800 }
               }}
               animate={controls}
               transition={{
-                duration: 0.8,
-                ease: 'easeInOut'
+                duration: isMobile ? 0.8 : 0.4,
+                ease: 'easeOut'
               }}
               initial='initial'>
-              <div className='flex min-h-[160px] items-center justify-center'>
+              <div className='flex min-h-[160px] items-center justify-center lg:min-h-[300px]'>
                 <motion.img
                   src='/assets/images/stakers/Liquid.svg'
                   alt='Liquid'
                   className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
-                    scale: 1.5,
-                    transition: { duration: 0.7 }
+                    scale: isMobile ? 1.5 : desktopAnimate === Animate.Initial ? 2.3 : 1,
+                    transition:  { duration: 0.7 }
+                  }}
+                  animate={{
+                    opacity:
+                      desktopAnimate === Animate.Middle || desktopAnimate === Animate.Final ? 0 : 1
                   }}
                 />
               </div>
-              <div className='flex min-h-[160px] items-center justify-center'>
+              <div className='flex min-h-[160px] items-center justify-center lg:min-h-[300px]'>
                 <motion.img
                   src='/assets/images/stakers/DAO.svg'
                   alt='DAO'
                   className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
-                    scale: 1.7,
+                    scale: isMobile ? 1.7 : desktopAnimate === Animate.Middle ? 2.5 : 1,
                     transition: { duration: 0.7 }
+                  }}
+                  animate={{
+                    opacity: desktopAnimate === Animate.Final ? 0 : 1
                   }}
                 />
               </div>
-              <div className='flex min-h-[160px] items-center justify-center'>
+              <div className='flex min-h-[160px] items-center justify-center lg:min-h-[300px]'>
                 <motion.img
                   src='/assets/images/stakers/Operations.svg'
                   alt='Operations'
                   className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
-                    scale: 1.7,
+                    scale: isMobile ? 1.7 : desktopAnimate === Animate.Final ? 2.5 : 1,
                     transition: { duration: 0.7 }
+                  }}
+                  animate={{
+                    opacity: desktopAnimate === Animate.Initial ? 0 : 1
                   }}
                 />
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
       {!isMobile && (
