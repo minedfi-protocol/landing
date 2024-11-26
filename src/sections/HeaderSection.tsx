@@ -41,7 +41,17 @@ export const HeaderSection = () => {
         <div className='absolute -right-0 top-5 h-[100px] w-[200px] bg-tvl_mobile bg-cover bg-center md:-top-5 md:h-[146px] md:w-[298px] md:bg-tvl' />
         <div className='absolute -left-0 bottom-8 h-[100px] w-[200px] bg-hash_mobile bg-cover bg-center md:h-[146px] md:w-[340px] md:bg-hashrate' />
         <div className='absolute -right-0 bottom-8 h-[100px] w-[200px] bg-energy_mobile bg-cover bg-center md:h-[146px] md:w-[340px] md:bg-energy' /> */}
-
+        <div className='mt-6 flex flex-col items-center justify-center md:hidden md:flex-row'>
+          <Image
+            src='/assets/images/hero-images-labels/Energy.svg'
+            alt='Energy'
+            width={56}
+            height={56}
+          />
+          <span className='ml-2 text-desktop-title-s text-neutral-80'>
+            Green Energy <span className='font-bold'>80%</span>
+          </span>
+        </div>
         <div className='flex min-h-[686px] w-full flex-col items-center justify-center bg-transparent'>
           <AnimatedTitle />
           <button className='mt-[56px] flex items-center justify-center rounded-[80px] bg-neutral-80 px-[20px] py-[18px] text-desktop-label text-neutral-10 md:mt-[46px]'>
