@@ -1,6 +1,8 @@
 import Navbar from '@/components/Navbar/Navbar'
 import { About } from '@/sections/AboutSection'
+import { Footer } from '@/sections/Footer'
 import { HeaderSection } from '@/sections/HeaderSection'
+import { PartnersSection } from '@/sections/PartnersSection'
 import { StakersSection } from '@/sections/StakersSection'
 import { TokenSection } from '@/sections/TokenSection'
 export default function Home() {
@@ -10,7 +12,8 @@ export default function Home() {
       <About />
       <TokenSection />
       <StakersSection />
-      <div className='h-svh bg-neutral-10' />
+      <PartnersSection />
+      <Footer />
     </div>
   )
 }

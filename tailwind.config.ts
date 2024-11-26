@@ -39,7 +39,8 @@ const config: Config = {
         'desktop-h1': ['88px', '90px'],
         'desktop-h2': ['56px', '72px'],
         'desktop-h3': ['48px', '48px'],
-        'desktop-title-m': ['20px', '24px'],
+        'desktop-title-m': ['24px', '30px'],
+        'desktop-title-s': ['20px', '24px'],
         'desktop-subtitle': ['20px', '20px'],
         'desktop-label': ['18px', '24px'],
         'desktop-body-m': ['18px', '28px'],
@@ -73,7 +74,8 @@ const config: Config = {
         energy_mobile: 'url("/assets/images/hero-images-labels/Energy-Mobile.png")',
         apy_mobile: 'url("/assets/images/hero-images-labels/APY-Mobile.png")',
         'about-info-background': 'url("/assets/images/about-us-graphic1.png")',
-        'about-info-phone': 'url("/assets/images/about-phone.png")'
+        'about-info-phone': 'url("/assets/images/about-phone.png")',
+        rings: 'url("/assets/images/rings.png")'
       }
     }
   },
