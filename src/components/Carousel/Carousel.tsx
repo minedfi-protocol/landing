@@ -124,7 +124,7 @@ export const Carousel = ({
     <div className='relative w-full overflow-hidden'>
       <div
         ref={sliderRef}
-        className='relative w-full max-w-2xl mx-auto flex justify-center items-center flex-col cursor-grab active:cursor-grabbing'
+        className='relative mx-auto flex w-full max-w-2xl cursor-grab flex-col items-center justify-center active:cursor-grabbing'
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -133,7 +133,7 @@ export const Carousel = ({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}>
         {showGradient && (
-          <div className='absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10' />
+          <div className='absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-[#FFFCF9] to-transparent' />
         )}
 
         <div className='overflow-hidden'>
@@ -144,20 +144,20 @@ export const Carousel = ({
               pointerEvents: isDragging ? 'none' : 'auto'
             }}>
             {childrenArray.map((child, index) => (
-              <div key={index} className='w-full flex-shrink-0 flex justify-center'>
+              <div key={index} className='flex w-full flex-shrink-0 justify-center'>
                 {child}
               </div>
             ))}
           </div>
         </div>
         {showButtons && (
-          <div className='flex mt-[14px] space-x-3 p-2'>
+          <div className='mt-[14px] flex space-x-3 p-2'>
             <button
               onClick={() => {
                 prevSlide()
                 resetAutoPlay()
               }}
-              className='z-20 p-2 rounded-full w-[56px] h-[56px] bg-neutral-20 hover:bg-white transition-colors flex justify-center items-center'>
+              className='z-20 flex h-[56px] w-[56px] items-center justify-center rounded-full bg-neutral-20 p-2 transition-colors hover:bg-white'>
               <Image
                 src='/assets/images/button-arrow-black.svg'
                 alt='left'
@@ -172,14 +172,14 @@ export const Carousel = ({
                 nextSlide()
                 resetAutoPlay()
               }}
-              className='z-20 p-2 w-[56px] h-[56px] rounded-full bg-neutral-60 hover:bg-white transition-colors flex justify-center items-center'>
+              className='z-20 flex h-[56px] w-[56px] items-center justify-center rounded-full bg-neutral-60 p-2 transition-colors hover:bg-white'>
               <Image src='/assets/images/button-arrow.svg' alt='left' width={24} height={24} />
             </button>
           </div>
         )}
 
         {showGradient && (
-          <div className='absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-10' />
+          <div className='absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent' />
         )}
       </div>
     </div>
