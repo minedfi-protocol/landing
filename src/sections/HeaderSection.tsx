@@ -1,4 +1,5 @@
 'use client'
+import { AnimatedTitle } from '@/components/Header/AnimatedTitle'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
@@ -42,12 +43,7 @@ export const HeaderSection = () => {
         <div className='absolute -right-0 bottom-8 h-[100px] w-[200px] bg-energy_mobile bg-cover bg-center md:h-[146px] md:w-[340px] md:bg-energy' />
 
         <div className='flex min-h-[686px] w-full flex-col items-center justify-center bg-transparent'>
-          <h1 className='bg-gradient-to-r from-[#180F08] to-[#5D544D] bg-clip-text p-4 text-center text-mobile-h1 text-transparent md:text-desktop-h1'>
-            Redefining Mining
-          </h1>
-          <h1 className='mt-[24px] text-center text-mobile-subtitle text-neutral-40 md:text-desktop-subtitle'>
-            Democratizing mining while fueling a sustainable future.
-          </h1>
+          <AnimatedTitle />
           <button className='mt-[56px] flex items-center justify-center rounded-[80px] bg-neutral-80 px-[20px] py-[18px] text-desktop-label text-neutral-10 md:mt-[46px]'>
             Join waitlist
             <Image
