@@ -168,13 +168,13 @@ export const StakersSection = () => {
       <div className='flex flex-col items-stretch bg-neutral-10 px-4 pt-12 md:px-[20px] lg:px-[140px]'>
         {!isMobile && <div className='z-10 h-[150px] w-full bg-neutral-10' />}
         {!isMobile && (
-          <div className={`sticky top-0 z-10 flex ${addMargin && 'mb-[610px]'}`}>
+          <div className={`sticky top-0 z-10 flex ${addMargin && 'mb-[520px]'}`}>
             <div className='h-[80px] w-full bg-neutral-10' />
             <div className='z-10 h-4 w-full bg-gradient-to-b from-neutral-10 to-transparent lg:top-[161px] lg:h-20' />
           </div>
         )}
         <div
-          className={`sticky top-0 flex min-h-[112px] flex-col items-center justify-center bg-neutral-10 lg:top-[70px] lg:w-1/2 lg:max-w-[600px] lg:items-start lg:pt-[0px] ${addMargin ? (isMobile ? 'mb-[450px]' : 'mb-[420px]') : ''}`}>
+          className={`sticky top-0 flex min-h-[112px] flex-col items-center justify-center bg-neutral-10 lg:top-[70px] lg:w-1/2 lg:max-w-[600px] lg:items-start lg:pt-[0px] ${addMargin ? (isMobile ? 'mb-[450px]' : 'mb-[330px]') : ''}`}>
           <div className='absolute top-[272px] z-10 h-8 w-full bg-gradient-to-b from-neutral-10 to-transparent lg:top-[197px] lg:h-8' />
 
           <h2 className='mt-[8px] text-center text-mobile-h2 text-neutral-60 lg:w-[800px] lg:text-left lg:text-desktop-h2'>
