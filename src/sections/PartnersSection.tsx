@@ -6,13 +6,7 @@ import { PartnersCardItem } from '@/components/CardItem/PartnersCardItem'
 
 export const PartnersSection = () => {
   return (
-    <section className='bg-cross-section-blur md: relative flex min-h-[400px] w-full flex-col items-center justify-center gap-16 overflow-hidden bg-contain bg-center bg-no-repeat px-5 pb-5 md:min-h-[1200px] md:bg-cover'>
-      {/* <div
-        className='bg-rings absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-cover bg-no-repeat'
-        style={{
-          maskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)',
-          WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)'
-        }}></div> */}
+    <section className='relative flex min-h-[800px] w-full flex-col items-center justify-center gap-16 overflow-hidden bg-cross-section-blur bg-cover bg-center bg-no-repeat px-5 pb-5 md:min-h-[1200px] md:bg-cover'>
       <div className='z-50 mt-20 h-full md:mt-48'>
         <>
           <p className='text-center text-mobile-label text-light-gray md:text-desktop-label'>
