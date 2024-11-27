@@ -1,6 +1,6 @@
+'use client'
 import { useState, useRef, TouchEvent } from 'react'
 import React from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 
 interface CarouselProps {
@@ -23,7 +23,6 @@ export const Carousel = ({
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
-  const [scrollLeft, setScrollLeft] = useState(0)
   const autoPlayRef = useRef<NodeJS.Timeout>()
   const sliderRef = useRef<HTMLDivElement>(null)
   const childrenArray = React.Children.toArray(children)
@@ -90,7 +89,6 @@ export const Carousel = ({
     if (!sliderRef.current) return
     setIsDragging(true)
     setStartX(e.pageX - sliderRef.current.offsetLeft)
-    setScrollLeft(sliderRef.current.scrollLeft)
   }
 
   const handleMouseUp = () => {

@@ -1,47 +1,10 @@
-'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { Carousel } from '@/components/Carousel/Carousel'
 import { AboutCardItem } from '@/components/CardItem/AboutCardItem'
+import { ChartAnimation } from '@/components/About/ChartAnimation'
 
 export const About = () => {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5
-    }
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && videoRef.current) {
-          try {
-            videoRef.current.play()
-          } catch (error) {
-            console.log('Video play error:', error)
-          }
-        } else if (videoRef.current) {
-          if (!videoRef.current.paused) {
-            videoRef.current.pause()
-          }
-        }
-      })
-    }, options)
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
-
   return (
     <section className='relative flex w-full flex-col items-center gap-16 overflow-hidden bg-[#FFFCF9] px-5 pb-5'>
       <div>
@@ -54,19 +17,7 @@ export const About = () => {
         </p>
       </div>
 
-      <div
-        ref={sectionRef}
-        className='z-[1] flex flex-col items-center gap-6 bg-[#FFFCF9] p-0 lg:h-[287px] lg:w-[509px]'>
-        <video
-          ref={videoRef}
-          muted
-          loop
-          playsInline
-          preload='auto'
-          className='h-full w-full object-cover'>
-          <source src='/assets/about-animation.mp4' type='video/mp4' />
-        </video>
-      </div>
+      <ChartAnimation />
       <div className=''>
         <Carousel autoPlay showGradient showButtons={false} interval={3000}>
           <AboutCardItem
