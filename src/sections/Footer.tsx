@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const Footer = () => {
   return (
@@ -19,14 +20,22 @@ export const Footer = () => {
           <div className='flex flex-col'>
             <div className='text-desktop-description font-bold text-neutral-60'>Resources</div>
             <div className='mt-[12px]'>
-              <div className='text-desktop-description text-neutral-60'>Media kit</div>
-              <div className='text-desktop-description text-neutral-60'>Docs</div>
+              <div className='cursor-pointer text-desktop-description text-neutral-60 hover:text-green-40 hover:underline'>
+                Media kit
+              </div>
+              <div className='cursor-pointer text-desktop-description text-neutral-60 hover:text-green-40 hover:underline'>
+                Docs
+              </div>
             </div>
           </div>
           <div className='flex flex-col'>
             <div className='text-desktop-description font-bold text-neutral-60'>Contact</div>
             <div className='mt-[12px]'>
-              <div className='text-desktop-description text-neutral-60'>minedfi@proton.me</div>
+              <Link href='mailto:minedfi@proton.me'>
+                <div className='text-desktop-description text-neutral-60 hover:text-green-40 hover:underline'>
+                  minedfi@proton.me
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -37,11 +46,11 @@ export const Footer = () => {
         </div>
         <div className='mt-2 flex text-desktop-description text-neutral-60 md:mt-0'>
           <div className='text-desktop-description text-neutral-60'>Follow us on:</div>
-          <div className='ml-[8px] flex space-x-[12px]'>
-            <div>
+          <div className='hover: ml-[8px] flex space-x-[12px]'>
+            <div className='cursor-pointer transition-all duration-200 hover:brightness-0'>
               <Image src='/assets/images/icons/x.svg' alt='X' width={16} height={16} />
             </div>
-            <div>
+            <div className='transition-all duration-200 hover:brightness-0'>
               <Image
                 src='/assets/images/icons/linkedin.svg'
                 alt='Linkedin'
@@ -49,7 +58,7 @@ export const Footer = () => {
                 height={16}
               />
             </div>
-            <div>
+            <div className='cursor-pointer transition-all duration-200 hover:brightness-0'>
               <Image
                 src='/assets/images/icons/telegram.svg'
                 alt='Telegram'
@@ -57,7 +66,7 @@ export const Footer = () => {
                 height={16}
               />
             </div>
-            <div>
+            <div className='cursor-pointer transition-all duration-200 hover:brightness-0'>
               <Image src='/assets/images/icons/medium.svg' alt='Medium' width={16} height={16} />
             </div>
           </div>
