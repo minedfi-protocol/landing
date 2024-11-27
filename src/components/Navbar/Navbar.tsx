@@ -25,7 +25,7 @@ export const Navbar = () => {
             <div
               key={item.label}
               className={`flex h-5 w-[${item.width}] flex-row items-center gap-1`}>
-              <span className='cursor-pointer text-sm text-neutral-60 hover:text-green-40 hover:underline'>
+              <span className='cursor-pointer text-sm text-neutral-60 transition-all hover:text-green-40 hover:underline'>
                 {item.label}
               </span>
               {item.hasDropdown && <ChevronDown className='h-[18px] w-[18px] text-[#625A52]' />}
