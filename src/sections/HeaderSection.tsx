@@ -54,7 +54,7 @@ export const HeaderSection = () => {
         </div>
         <div className='flex min-h-[686px] w-full flex-col items-center justify-center bg-transparent'>
           <AnimatedTitle />
-          <button className='mt-[56px] flex items-center justify-center rounded-[80px] bg-neutral-80 px-[20px] py-[18px] text-desktop-label text-neutral-10 md:mt-[46px]'>
+          <button className='mt-[56px] flex cursor-pointer items-center justify-center rounded-[80px] bg-neutral-80 px-[20px] py-[18px] text-desktop-label text-neutral-10 transition-colors hover:bg-neutral-60 md:mt-[46px]'>
             Join waitlist
             <Image
               src={'/assets/images/button-arrow.svg'}

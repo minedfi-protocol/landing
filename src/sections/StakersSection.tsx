@@ -293,7 +293,7 @@ export const StakersSection = () => {
           />
           <div
             className={`sticky bottom-0 bg-neutral-10 px-[140px] pb-[60px] pt-[30px] ${addBottomMargin && 'mt-[800px]'}`}>
-            <button className='z-20 flex h-12 w-[138px] flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3'>
+            <button className='z-20 flex h-12 w-[138px] cursor-pointer flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3 transition-colors hover:bg-neutral-60'>
               <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
                 Join waitlist
               </span>
