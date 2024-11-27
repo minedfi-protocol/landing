@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 export const TokenSection = () => {
   return (
-    <section className='relative flex w-full flex-col items-center gap-16 overflow-hidden bg-[#FFFCF9] px-5 pb-5'>
+    <section className='relative flex w-full flex-col items-center gap-16 overflow-hidden bg-[#FFFCF9] px-5 pb-5 lg:mt-[90px]'>
       <div>
-        <h2 className='mt-[12px] text-center text-mobile-h2 text-neutral-60 lg:w-[800px] lg:text-desktop-h2'>
+        <h2 className='text-center text-mobile-h2 text-neutral-60 lg:w-[800px] lg:text-desktop-h2'>
           Stake native tokens, receive LMTs and mining rewards
         </h2>
         <p className='mt-2 text-center text-mobile-subtitle text-neutral-40 lg:w-[800px] lg:text-desktop-subtitle'>

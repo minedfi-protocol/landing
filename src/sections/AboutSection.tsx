@@ -8,10 +8,10 @@ export const About = () => {
   return (
     <section className='relative flex w-full flex-col items-center gap-16 overflow-hidden bg-[#FFFCF9] px-5 pb-5'>
       <div>
-        <h2 className='mt-7 text-center text-mobile-h2 text-neutral-60 lg:w-[800px] lg:text-desktop-h2'>
+        <h2 className='mt-7 text-center text-mobile-h2 text-neutral-60 lg:mt-12 lg:w-[800px] lg:text-desktop-h2'>
           Redefining mining through liquid staking
         </h2>
-        <p className='mt-2 text-center text-mobile-subtitle text-neutral-40 lg:mt-20 lg:w-[800px] lg:text-desktop-subtitle'>
+        <p className='mt-2 text-center text-mobile-subtitle text-neutral-40 lg:mt-[20px] lg:w-[800px] lg:text-desktop-subtitle'>
           Optimize your PoW investments with mined.fi's multicoin staking. Stake $BTC, $ALPH, $DOGE,
           or $KAS to earn mining rewards and boost your DeFi potential.
         </p>
@@ -34,7 +34,7 @@ export const About = () => {
           />
         </Carousel>
       </div>
-      <div className='flex h-[950px] w-full flex-col-reverse overflow-hidden rounded-[32px] bg-about-info-background bg-cover bg-no-repeat pt-[32px] lg:h-[582px] lg:max-w-[1160px] lg:flex-row lg:px-0 lg:pt-0'>
+      <div className='my-[100px] flex h-[950px] w-full flex-col-reverse overflow-hidden rounded-[32px] bg-about-info-background bg-cover bg-no-repeat pt-[32px] lg:h-[582px] lg:max-w-[1160px] lg:flex-row lg:px-0 lg:pt-0'>
         <div className='h-[750px] w-full lg:w-[630px]'>
           <div className='mt-[70px] h-full w-full bg-about-info-phone bg-top bg-no-repeat md:mt-[190px] lg:mt-[70px]'></div>
         </div>
