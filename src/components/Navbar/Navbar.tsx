@@ -25,7 +25,7 @@ export const Navbar = () => {
             <div
               key={item.label}
               className={`flex h-5 w-[${item.width}] flex-row items-center gap-1`}>
-              <span className='cursor-pointer text-sm text-neutral-60 transition-all hover:text-green-40 hover:underline'>
+              <span className='cursor-pointer text-sm text-neutral-60 transition-colors hover:text-green-40 hover:underline'>
                 {item.label}
               </span>
               {item.hasDropdown && <ChevronDown className='h-[18px] w-[18px] text-[#625A52]' />}
@@ -34,7 +34,7 @@ export const Navbar = () => {
         </div>
 
         <div className='hidden h-12 w-[264px] flex-row items-center justify-center gap-4 lg:flex'>
-          <button className='flex h-12 w-[110px] cursor-pointer flex-row items-center justify-center rounded-[80px] border border-solid border-[#BFB8B0] px-5 py-3 transition-colors hover:bg-green-10'>
+          <button className='flex h-12 w-[110px] cursor-pointer flex-row items-center justify-center rounded-[80px] border border-solid border-neutral-40 px-5 py-3 transition-colors hover:border-neutral-80'>
             <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-80'>
               Contact
             </span>

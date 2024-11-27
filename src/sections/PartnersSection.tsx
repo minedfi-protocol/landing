@@ -23,7 +23,7 @@ export const PartnersSection = () => {
             <PartnersCardItem
               title='Auditors'
               logos={
-                <div className='mx-auto grid w-full max-w-3xl grid-cols-2 gap-x-40 gap-y-4'>
+                <div className='mx-auto grid w-full max-w-3xl grid-cols-2 gap-x-10 gap-y-4 md:gap-x-40'>
                   <div className='relative flex h-8 w-full items-center justify-center'>
                     <Image
                       src='/assets/images/partners/audit-1.png'
