@@ -19,10 +19,10 @@ export const Footer = () => {
           <div className='flex flex-col'>
             <div className='text-desktop-description font-bold text-neutral-60'>Resources</div>
             <div className='mt-[12px]'>
-              <div className='cursor-pointer text-desktop-description text-neutral-60 hover:text-green-40 hover:underline'>
+              <div className='cursor-pointer text-desktop-description text-neutral-60 transition-colors hover:text-green-40 hover:underline'>
                 Media kit
               </div>
-              <div className='cursor-pointer text-desktop-description text-neutral-60 hover:text-green-40 hover:underline'>
+              <div className='cursor-pointer text-desktop-description text-neutral-60 transition-colors hover:text-green-40 hover:underline'>
                 Docs
               </div>
             </div>
@@ -31,7 +31,7 @@ export const Footer = () => {
             <div className='text-desktop-description font-bold text-neutral-60'>Contact</div>
             <div className='mt-[12px]'>
               <Link href='mailto:minedfi@proton.me'>
-                <div className='text-desktop-description text-neutral-60 hover:text-green-40 hover:underline'>
+                <div className='text-desktop-description text-neutral-60 transition-colors hover:text-green-40 hover:underline'>
                   minedfi@proton.me
                 </div>
               </Link>
