@@ -100,7 +100,7 @@ export const StakersSection = () => {
   })
   const [desktopAnimate, setDesktopAnimate] = useState(Animate.Initial)
   const [addMargin, setAddMargin] = useState(false)
-  const [addBottomMargin, setAddBottomMargin] = useState(false)
+  const [addBottomMargin, setAddBottomMargin] = useState(true)
 
   const firstTabRef = useRef(null)
   const secondTabRef = useRef(null)
@@ -108,7 +108,7 @@ export const StakersSection = () => {
 
   const secondTabInViewDesktop = useInView(secondTabRef, {
     amount: 0.7,
-    margin: '1000px 0px -300px 0px'
+    margin: '1000px 0px -150px 0px'
   })
   const thirdTabInViewDesktop = useInView(thirdTabRef, {
     amount: 0.7,
@@ -136,7 +136,9 @@ export const StakersSection = () => {
     } else {
       setAddBottomMargin(false)
     }
-
+    console.log('secondTabInViewDesktop', secondTabInViewDesktop)
+    console.log('thirdTabInViewDesktop', thirdTabInViewDesktop)
+    console.log('value', value)
     if (!isMobile) {
       if (!secondTabInViewDesktop && !thirdTabInViewDesktop && value < 0.8) {
         controls.start(Animate.Initial)
