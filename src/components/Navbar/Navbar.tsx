@@ -40,7 +40,7 @@ export const Navbar = () => {
             </span>
           </button>
 
-          <button className='flex h-12 w-[138px] cursor-pointer flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3 transition-colors hover:bg-neutral-60'>
+          <button className='flex h-12 w-[138px] cursor-pointer flex-row items-center justify-center rounded-[80px] border-neutral-40 px-5 py-3 transition-colors hover:border-neutral-80'>
             <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
               Join waitlist
             </span>
