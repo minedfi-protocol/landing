@@ -22,7 +22,7 @@ export const PartnersSection = () => {
             <PartnersCardItem
               title='Auditors'
               logos={
-                <div className='mx-auto grid w-full max-w-3xl grid-cols-2 gap-4'>
+                <div className='mx-auto grid w-full max-w-3xl grid-cols-2 gap-x-40 gap-y-4'>
                   {/* Siatka 2x2 na wszystkich breakpointach */}
                   <div className='relative flex h-8 w-full items-center justify-center'>
                     <Image
