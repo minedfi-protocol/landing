@@ -1,46 +1,16 @@
-'use client'
 import { AnimatedTitle } from '@/components/Header/AnimatedTitle'
+import { HeaderAnimation } from '@/components/Header/HeaderAnimation'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 
 export const HeaderSection = () => {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    checkMobile()
-
-    window.addEventListener('resize', checkMobile)
-
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
-
   return (
     <section className='relative mx-auto flex w-[calc(100%-40px)] flex-col items-center gap-16 overflow-hidden rounded-3xl bg-transparent'>
       <div className='absolute -inset-1 z-0'>
         <div className='absolute inset-0 z-0'>
-          <video
-            key={isMobile ? 'mobile' : 'desktop'}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className='h-full w-full bg-transparent object-cover md:object-center'>
-            <source
-              src={isMobile ? '/assets/drop-mobile.mp4' : '/assets/drop.mp4'}
-              type='video/mp4'
-            />
-          </video>
+          <HeaderAnimation />
         </div>
       </div>
       <div className='relative z-10 w-full'>
-        {/* <div className='absolute -left-0 top-5 h-[100px] w-[200px] bg-apy_mobile bg-cover bg-center md:-top-5 md:h-[146px] md:w-[298px] md:bg-apy' />
-        <div className='absolute -right-0 top-5 h-[100px] w-[200px] bg-tvl_mobile bg-cover bg-center md:-top-5 md:h-[146px] md:w-[298px] md:bg-tvl' />
-        <div className='absolute -left-0 bottom-8 h-[100px] w-[200px] bg-hash_mobile bg-cover bg-center md:h-[146px] md:w-[340px] md:bg-hashrate' />
-        <div className='absolute -right-0 bottom-8 h-[100px] w-[200px] bg-energy_mobile bg-cover bg-center md:h-[146px] md:w-[340px] md:bg-energy' /> */}
         <div className='mt-6 flex flex-col items-center justify-center md:hidden md:flex-row'>
           <Image
             src='/assets/images/hero-images-labels/Energy.svg'
