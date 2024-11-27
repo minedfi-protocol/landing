@@ -4,25 +4,24 @@ import React from 'react'
 export const FaqSection = () => {
   const faqData = [
     {
-      question: 'Is there a free trial available?',
-      answer:
-        'Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.'
+      question: 'Mocked question?',
+      answer: 'Mocked answer for question on landing page.'
     },
     {
       question: 'Mocked question?',
-      answer: 'Mocked answer for question on lading page.'
+      answer: 'Mocked answer for question on landing page.'
     },
     {
       question: 'Mocked question?',
-      answer: 'Mocked answer for question on lading page.'
+      answer: 'Mocked answer for question on landing page.'
     },
     {
       question: 'Mocked question?',
-      answer: 'Mocked answer for question on lading page.'
+      answer: 'Mocked answer for question on landing page.'
     },
     {
       question: 'Mocked question?',
-      answer: 'Mocked answer for question on lading page.'
+      answer: 'Mocked answer for question on landing page.'
     }
   ]
 
@@ -36,7 +35,7 @@ export const FaqSection = () => {
           Everything you need to know about the product and billing.
         </p>
       </div>
-      <div className='lg:mt-12'>
+      <div className='lg:mt-12 lg:w-[768px]'>
         {faqData.map((faq, index) => (
           <FAQItem index={index} key={index} question={faq.question} answer={faq.answer} />
         ))}
