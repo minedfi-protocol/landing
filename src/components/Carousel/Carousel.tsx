@@ -133,7 +133,7 @@ export const Carousel = ({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}>
         {showGradient && (
-          <div className='absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-[#FFFCF9] to-transparent' />
+          <div className='absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-neutral-10 to-transparent' />
         )}
 
         <div className='overflow-hidden'>
@@ -179,7 +179,7 @@ export const Carousel = ({
         )}
 
         {showGradient && (
-          <div className='absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent' />
+          <div className='absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-neutral-10 to-transparent' />
         )}
       </div>
     </div>

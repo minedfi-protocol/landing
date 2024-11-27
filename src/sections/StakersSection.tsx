@@ -245,7 +245,7 @@ export const StakersSection = () => {
                   alt='Liquid'
                   className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
-                    scale: isMobile ? 1.5 : desktopAnimate === Animate.Initial ? 2.3 : 1,
+                    scale: isMobile ? 1.5 : desktopAnimate === Animate.Initial ? 2.8 : 1,
                     transition: { duration: 0.7 }
                   }}
                   animate={{
@@ -260,7 +260,7 @@ export const StakersSection = () => {
                   alt='DAO'
                   className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
-                    scale: isMobile ? 1.7 : desktopAnimate === Animate.Middle ? 2.5 : 1,
+                    scale: isMobile ? 1.7 : desktopAnimate === Animate.Middle ? 3 : 1,
                     transition: { duration: 0.7 }
                   }}
                   animate={{
@@ -274,7 +274,7 @@ export const StakersSection = () => {
                   alt='Operations'
                   className='m-auto w-[120px] lg:w-[220px]'
                   whileInView={{
-                    scale: isMobile ? 1.7 : desktopAnimate === Animate.Final ? 2.5 : 1,
+                    scale: isMobile ? 1.7 : desktopAnimate === Animate.Final ? 3 : 1,
                     transition: { duration: 0.7 }
                   }}
                   animate={{
