@@ -157,7 +157,7 @@ export const Carousel = ({
                 prevSlide()
                 resetAutoPlay()
               }}
-              className='z-20 flex h-[56px] w-[56px] items-center justify-center rounded-full bg-neutral-20 p-2 transition-colors hover:bg-white'>
+              className='z-20 flex h-[56px] w-[56px] cursor-pointer items-center justify-center rounded-full bg-neutral-20 p-2 transition-colors hover:bg-green-10'>
               <Image
                 src='/assets/images/button-arrow-black.svg'
                 alt='left'
@@ -172,7 +172,7 @@ export const Carousel = ({
                 nextSlide()
                 resetAutoPlay()
               }}
-              className='z-20 flex h-[56px] w-[56px] items-center justify-center rounded-full bg-neutral-60 p-2 transition-colors hover:bg-white'>
+              className='z-20 flex h-[56px] w-[56px] cursor-pointer items-center justify-center rounded-full bg-neutral-80 p-2 transition-colors hover:bg-neutral-60'>
               <Image src='/assets/images/button-arrow.svg' alt='left' width={24} height={24} />
             </button>
           </div>

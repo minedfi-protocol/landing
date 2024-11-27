@@ -12,7 +12,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className='box-border z-50 flex h-20 w-full flex-col items-center justify-center bg-neutral-10 px-4 lg:px-[140px]'>
+    <nav className='z-50 box-border flex h-20 w-full flex-col items-center justify-center bg-neutral-10 px-4 lg:px-[140px]'>
       <div className='flex h-12 w-full max-w-[1160px] flex-row items-center justify-between gap-8 p-0'>
         <div className='flex h-6 w-[119px] flex-row items-start gap-1'>
           <div className='flex h-6 w-[119px] flex-row items-center gap-1'>
@@ -20,7 +20,7 @@ export const Navbar = () => {
           </div>
         </div>
 
-        <div className='hidden lg:flex h-12 w-[427px] flex-row items-center gap-8 rounded-[80px] px-6'>
+        <div className='hidden h-12 w-[427px] flex-row items-center gap-8 rounded-[80px] px-6 lg:flex'>
           {menuItems.map(item => (
             <div
               key={item.label}
@@ -31,21 +31,21 @@ export const Navbar = () => {
           ))}
         </div>
 
-        <div className='hidden lg:flex h-12 w-[264px] flex-row items-center justify-center gap-4'>
-          <button className='flex h-12 w-[110px] flex-row items-center justify-center rounded-[80px] border border-solid border-[#BFB8B0] px-5 py-3'>
+        <div className='hidden h-12 w-[264px] flex-row items-center justify-center gap-4 lg:flex'>
+          <button className='flex h-12 w-[110px] cursor-pointer flex-row items-center justify-center rounded-[80px] border border-solid border-[#BFB8B0] px-5 py-3 transition-colors hover:bg-green-10'>
             <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-80'>
               Contact
             </span>
           </button>
 
-          <button className='flex h-12 w-[138px] flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3'>
+          <button className='flex h-12 w-[138px] cursor-pointer flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3 transition-colors hover:bg-neutral-60'>
             <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
               Join waitlist
             </span>
           </button>
         </div>
 
-        <button className='lg:hidden p-2' onClick={toggleMobileMenu}>
+        <button className='p-2 lg:hidden' onClick={toggleMobileMenu}>
           {isMobileMenuOpen ? (
             <X className='h-6 w-6 text-[#180F08]' />
           ) : (
@@ -55,8 +55,8 @@ export const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className='lg:hidden absolute z-50 top-20 left-0 w-full bg-neutral-10 border-t border-[#BFB8B0]'>
-          <div className='flex flex-col p-4 gap-4'>
+        <div className='absolute left-0 top-20 z-50 w-full border-t border-[#BFB8B0] bg-neutral-10 lg:hidden'>
+          <div className='flex flex-col gap-4 p-4'>
             <div className='flex flex-col gap-4'>
               {menuItems.map(item => (
                 <div
@@ -68,7 +68,7 @@ export const Navbar = () => {
               ))}
             </div>
 
-            <div className='flex flex-col gap-4 pt-4 border-t border-[#BFB8B0]'>
+            <div className='flex flex-col gap-4 border-t border-[#BFB8B0] pt-4'>
               <button className='flex h-12 w-full flex-row items-center justify-center rounded-[80px] border border-solid border-[#BFB8B0] px-5 py-3'>
                 <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-80'>
                   Contact
