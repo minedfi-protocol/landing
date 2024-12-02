@@ -231,9 +231,9 @@ export const StakersSection = () => {
             <motion.div
               className='flex flex-1 flex-col items-center justify-between gap-[100px] lg:gap-[100px]'
               variants={{
-                [Animate.Initial]: { y: 0 },
-                [Animate.Middle]: { y: isMobile ? -260 : -400 },
-                [Animate.Final]: { y: isMobile ? -520 : -800 }
+                [Animate.Initial]: { y: isMobile ? 0 : -80 },
+                [Animate.Middle]: { y: isMobile ? -260 : -480 },
+                [Animate.Final]: { y: isMobile ? -520 : -880 }
               }}
               animate={controls}
               transition={{
