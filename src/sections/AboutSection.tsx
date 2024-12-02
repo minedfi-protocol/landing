@@ -48,7 +48,7 @@ export const About = () => {
             mining rewards, accessing a potentially profitable field with a low entry barrier.
           </p>
 
-          <button className='mt-[46px] flex items-center justify-center rounded-[80px] bg-neutral-10 px-[20px] py-[18px] text-desktop-label text-neutral-80 transition-colors hover:bg-green-10 lg:mt-[46px]'>
+          <button className='mt-[46px] flex items-center justify-center text-nowrap rounded-[80px] bg-neutral-10 px-[20px] py-[18px] text-desktop-label text-neutral-80 transition-colors hover:bg-green-10 lg:mt-[46px]'>
             Join waitlist
             <Image
               src={'/assets/images/button-arrow-black.svg'}
