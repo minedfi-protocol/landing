@@ -136,9 +136,7 @@ export const StakersSection = () => {
     } else {
       setAddBottomMargin(false)
     }
-    console.log('secondTabInViewDesktop', secondTabInViewDesktop)
-    console.log('thirdTabInViewDesktop', thirdTabInViewDesktop)
-    console.log('value', value)
+
     if (!isMobile) {
       if (!secondTabInViewDesktop && !thirdTabInViewDesktop && value < 0.8) {
         controls.start(Animate.Initial)
@@ -231,9 +229,9 @@ export const StakersSection = () => {
             <motion.div
               className='flex flex-1 flex-col items-center justify-between gap-[100px] lg:gap-[100px]'
               variants={{
-                [Animate.Initial]: { y: 0 },
-                [Animate.Middle]: { y: isMobile ? -260 : -400 },
-                [Animate.Final]: { y: isMobile ? -520 : -800 }
+                [Animate.Initial]: { y: isMobile ? 0 : -80 },
+                [Animate.Middle]: { y: isMobile ? -260 : -480 },
+                [Animate.Final]: { y: isMobile ? -520 : -880 }
               }}
               animate={controls}
               transition={{
@@ -296,7 +294,7 @@ export const StakersSection = () => {
           <div
             className={`sticky bottom-0 bg-neutral-10 px-[140px] pb-[60px] pt-[30px] ${addBottomMargin && 'mt-[800px]'}`}>
             <button className='z-20 flex h-12 w-[138px] cursor-pointer flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3 transition-colors hover:bg-neutral-60'>
-              <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
+              <span className='text-nowrap text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
                 Join waitlist
               </span>
             </button>
