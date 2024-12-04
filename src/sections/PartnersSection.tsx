@@ -5,10 +5,10 @@ import { PartnersCardItem } from '@/components/CardItem/PartnersCardItem'
 
 export const PartnersSection = () => {
   return (
-    <section className='relative flex min-h-[800px] w-full flex-col items-center justify-center gap-16 overflow-hidden bg-cross-section-blur bg-cover bg-center bg-no-repeat px-5 pb-5 md:min-h-[1200px] md:bg-cover'>
+    <section className='flex min-h-[800px] w-full flex-col items-center gap-16 overflow-hidden bg-cross-section-blur bg-contain bg-no-repeat px-5 pb-5 md:relative md:min-h-[600px] md:justify-center md:bg-cover md:bg-[center_15%]'>
       <div className='absolute bottom-0 h-24 w-full bg-gradient-to-t from-neutral-10 to-transparent md:h-44' />
       <div className='absolute top-0 h-32 w-full bg-gradient-to-t from-transparent to-neutral-10 md:h-80' />
-      <div className='z-50 mt-20 h-full md:mt-48'>
+      <div className='md:mt-30 z-50 mt-4 h-full'>
         <>
           <p className='text-center text-mobile-label text-light-gray md:text-desktop-label'>
             Build on
