@@ -26,7 +26,7 @@ export const FaqSection = () => {
   ]
 
   return (
-    <section className='flex w-full flex-col items-center bg-[#FFFCF9] px-4 py-12 lg:px-[80px] lg:py-[96px]'>
+    <section className='flex w-full flex-col items-center bg-[#FFFCF9] px-4 py-12 lg:px-[80px] lg:pb-[96px] lg:pt-[20px]'>
       <div>
         <h2 className='mt-[12px] text-center text-mobile-h2 text-neutral-60 lg:w-[800px] lg:text-desktop-h2'>
           Frequently asked questions
