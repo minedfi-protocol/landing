@@ -35,13 +35,13 @@ export const Navbar = () => {
 
         <div className='hidden h-12 w-[264px] flex-row items-center justify-center gap-4 lg:flex'>
           <button className='flex h-12 w-[110px] cursor-pointer flex-row items-center justify-center rounded-[80px] border border-solid border-neutral-40 px-5 py-3 transition-colors hover:border-neutral-80'>
-            <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-80'>
+            <span className='text-nowrap text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-80'>
               Contact
             </span>
           </button>
 
           <button className='flex h-12 w-[138px] cursor-pointer flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3 transition-colors hover:bg-neutral-60'>
-            <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
+            <span className='text-nowrap text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
               Join waitlist
             </span>
           </button>
@@ -72,13 +72,13 @@ export const Navbar = () => {
 
             <div className='flex flex-col gap-4 border-t border-[#BFB8B0] pt-4'>
               <button className='flex h-12 w-full flex-row items-center justify-center rounded-[80px] border border-solid border-[#BFB8B0] px-5 py-3'>
-                <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-80'>
+                <span className='text-nowrap text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-80'>
                   Contact
                 </span>
               </button>
 
               <button className='flex h-12 w-full flex-row items-center justify-center rounded-[80px] bg-neutral-80 px-5 py-3'>
-                <span className='text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
+                <span className='text-nowrap text-sm font-medium leading-[120%] tracking-[-0.005em] text-neutral-10'>
                   Join waitlist
                 </span>
               </button>
