@@ -12,6 +12,9 @@ const config: Config = {
       fontFamily: {
         Golos: ['Golos', 'sans-serif']
       },
+      backgroundPosition: {
+        'center-1': 'center center 5rem'
+      },
       colors: {
         neutral: {
           10: '#FFFCF9',

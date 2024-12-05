@@ -1,8 +1,43 @@
-import React from 'react'
+'use client'
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import { Carousel } from '@/components/Carousel/Carousel'
 import { AboutCardItem } from '@/components/CardItem/AboutCardItem'
 import { ChartAnimation } from '@/components/About/ChartAnimation'
+import { motion, useScroll, useTransform } from 'motion/react'
+
+const HorizontalScrollCarousel = () => {
+  const targetRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef
+  })
+
+  const x = useTransform(scrollYProgress, [0, 1], ['50%', '100%'])
+
+  return (
+    <section ref={targetRef} className='relative h-[50vh] bg-neutral-900'>
+      <div className='absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-neutral-10 to-transparent' />
+
+      <div className='sticky top-0 flex h-screen w-1/2 items-center overflow-hidden'>
+        <motion.div style={{ x }} className='flex w-1/2 gap-4'>
+          <AboutCardItem
+            number='1'
+            description='Stake your assets on your terms with flexible vesting periods.'
+          />
+          <AboutCardItem
+            number='2'
+            description='Receive Liquid Mining Tokens (LMTs) in return (e.g., sALPH, sKAS, sBTC).'
+          />
+          <AboutCardItem
+            number='3'
+            description=' Watch your allocation grow and monitor your staking performance with full visibility and real-time insights.'
+          />
+        </motion.div>
+      </div>
+      <div className='absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-neutral-10 to-transparent' />
+    </section>
+  )
+}
 
 export const About = () => {
   return (
@@ -18,22 +53,8 @@ export const About = () => {
       </div>
 
       <ChartAnimation />
-      <div className=''>
-        <Carousel autoPlay showGradient showButtons={false} interval={3000}>
-          <AboutCardItem
-            number='1'
-            description='Stake your assets on your terms with flexible vesting periods.'
-          />
-          <AboutCardItem
-            number='2'
-            description='Receive Liquid Mining Tokens (LMTs) in return (e.g., sALPH, sKAS, sBTC).'
-          />
-          <AboutCardItem
-            number='3'
-            description=' Watch your allocation grow and monitor your staking performance with full visibility and real-time insights.'
-          />
-        </Carousel>
-      </div>
+
+      {/* </div> */}
       <div className='my-[100px] flex h-[950px] w-full flex-col-reverse overflow-hidden rounded-[32px] bg-about-info-background bg-cover bg-no-repeat pt-[32px] lg:h-[582px] lg:max-w-[1160px] lg:flex-row lg:px-0 lg:pt-0'>
         <div className='h-[750px] w-full lg:w-[630px]'>
           <div className='mt-[70px] h-full w-full bg-about-info-phone bg-top bg-no-repeat md:mt-[190px] lg:mt-[70px]'></div>
@@ -48,7 +69,7 @@ export const About = () => {
             mining rewards, accessing a potentially profitable field with a low entry barrier.
           </p>
 
-          <button className='mt-[46px] flex items-center justify-center rounded-[80px] bg-neutral-10 px-[20px] py-[18px] text-desktop-label text-neutral-80 transition-colors hover:bg-green-10 lg:mt-[46px]'>
+          <button className='mt-[46px] flex items-center justify-center text-nowrap rounded-[80px] bg-neutral-10 px-[20px] py-[18px] text-desktop-label text-neutral-80 transition-colors hover:bg-green-10 lg:mt-[46px]'>
             Join waitlist
             <Image
               src={'/assets/images/button-arrow-black.svg'}

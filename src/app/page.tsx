@@ -4,6 +4,7 @@ import { About } from '@/sections/AboutSection'
 import { FaqSection } from '@/sections/FaqSection'
 import { Footer } from '@/sections/Footer'
 import { HeaderSection } from '@/sections/HeaderSection'
+import Example from '@/sections/HorizontalScrollSection'
 import { PartnersSection } from '@/sections/PartnersSection'
 import { StakersSection } from '@/sections/StakersSection'
 import { TokenSection } from '@/sections/TokenSection'
@@ -12,7 +13,8 @@ export default function Home() {
     <div className='min-w-screen min-h-screen bg-neutral-10'>
       <HeaderSection />
       <TokensCarousel />
-      <About />
+      {/* <About /> */}
+      <Example />
       <TokenSection />
       <StakersSection />
       <PartnersSection />
